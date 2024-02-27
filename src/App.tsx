@@ -2,7 +2,6 @@ import ExchangeHome from '@pages/exchange/ExchangeHome';
 import Home from '@pages/mainPage/Home';
 import Landing from '@pages/mainPage/Landing';
 import { Route, Routes } from 'react-router-dom';
-import NearbyStoreMap from '@lib/kakaoMap';
 const App = () => {
 	return (
 		<Routes>

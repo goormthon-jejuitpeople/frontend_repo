@@ -1,13 +1,9 @@
 import Header from '@components/ui/Header';
-import { IoIosSearch, IoMdNotificationsOutline } from 'react-icons/io';
 
 const Home = () => {
 	return (
 		<>
-			<Header headline='스위치콘'>
-				<IoIosSearch />
-				<IoMdNotificationsOutline />
-			</Header>
+			<Header headline='스위치콘'></Header>
 			<p className='text-lg'>히하</p>
 		</>
 	);

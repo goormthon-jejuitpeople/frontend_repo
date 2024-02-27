@@ -1,5 +1,3 @@
-import { SlArrowLeft } from 'react-icons/sl';
-
 interface HeaderProps {
 	headline: string; // Header 작성할 내용
 	navigaterOff?: boolean; // 뒤로가기 버튼 없앨 거면 props로 넘겨주면됨.
@@ -8,13 +6,7 @@ interface HeaderProps {
 const Header = ({ headline, navigaterOff, children }: HeaderProps) => {
 	return (
 		<>
-			<header className='flex fixed  bg-white w-[23.4375rem] py-2 pl-2  h-auto shadow-sm '>
-				<div className='flex items-center'>
-					{navigaterOff === undefined && <SlArrowLeft size='20' />}
-					<div className='mx-2 title-s'>{headline}</div>
-					{children}
-				</div>
-			</header>
+			<header className='flex fixed  bg-white w-[23.4375rem] py-2 pl-2  h-auto shadow-sm '>header</header>
 		</>
 	);
 };

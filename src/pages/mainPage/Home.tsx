@@ -1,7 +1,7 @@
-import ReviewSummaryButton from '@components/ReviewSummaryButton';
+import Selector from '@components/TimeDropdown';
 import NearbyStoreMap from '@components/kakaoMap';
 
-const Landing = () => {
+const Home = () => {
 	return (
 		<div
 			style={{
@@ -10,9 +10,9 @@ const Landing = () => {
 		>
 			{/* <NearbyStoreMap searchKeyword={'오름'} /> */}
 			<NearbyStoreMap />
-			{/* <ReviewSummaryButton /> */}
+			<Selector />
 		</div>
 	);
 };
 
-export default Landing;
+export default Home;

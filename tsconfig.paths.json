@@ -5,8 +5,9 @@
 			"@pages/*": ["./pages/*"],
 			"@components/*": ["./components/*"],
 			"@hooks/*": ["./hooks/*"],
-			"@mock/*":["./mock/*"],
-			"@api/*":["./api/*"]
+			"@mock/*": ["./mock/*"],
+			"@api/*": ["./api/*"],
+			"@icons/*": ["./icons/*"]
 		}
 	}
 }

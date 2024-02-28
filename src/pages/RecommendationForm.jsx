@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Rectangle from '../assets/Rectangle.svg';
 import mountain from '../assets/mountain.svg';
 import sea from '../assets/sea.svg';
+import { Link } from 'react-router-dom';
 
 const RecommendationForm = () => {
 	const [selectedLocation, setSelectedLocation] = useState('');
@@ -167,12 +168,16 @@ const RecommendationForm = () => {
 				</div>
 			</div>
 			<section className='flex gap-2 mb-12 '>
-				<button className='flex flex-col items-center justify-center h-13 px-6 py-3.5 text-white bg-green rounded-md'>
-					추천해주세요, 흑꿀꿀!
-				</button>
-				<button className='flex flex-col items-center justify-center h-13 px-6 py-3.5 bg-[#F0F0F5] text-[#525463]'>
-					홈으로
-				</button>
+				<Link to='/'>
+					<button className='flex flex-col items-center justify-center h-13 px-6 py-3.5 text-white bg-green rounded-md'>
+						추천해주세요, 흑꿀꿀!
+					</button>
+				</Link>
+				<Link to='/'>
+					<button className='flex flex-col items-center justify-center h-13 px-6 py-3.5 bg-[#F0F0F5] text-[#525463] rounded-md'>
+						홈으로
+					</button>
+				</Link>
 			</section>
 		</main>
 	);

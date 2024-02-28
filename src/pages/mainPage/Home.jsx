@@ -90,6 +90,51 @@ const Home = () => {
 						map: map,
 						averageCenter: true,
 						minLevel: 3,
+						calculator: [3, 30, 50], // 클러스터의 크기 구분 값, 각 사이값마다 설정된 text나 style이 적용된다
+						styles: [
+							{
+								// calculator 각 사이 값 마다 적용될 스타일을 지정한다
+								// width: '30px',
+								// height: '30px',
+								// background: '#FF7C43',
+								// borderRadius: '15px',
+								// color: '#000',
+								// textAlign: 'center',
+								// fontWeight: 'bold',
+								// lineHeight: '31px',
+
+								width: '0',
+								height: '0',
+								borderBottom: '10px solid #FF7C43',
+								borderTop: '10px solid transparent',
+								borderLeft: '10px solid transparent',
+								borderRight: '10px solid transparent',
+							},
+							{
+								width: '0',
+								height: '0',
+								borderBottom: '10px solid #FF7C43',
+								borderTop: '10px solid transparent',
+								borderLeft: '10px solid transparent',
+								borderRight: '10px solid transparent',
+							},
+							{
+								width: '0',
+								height: '0',
+								borderBottom: '10px solid #FF7C43',
+								borderTop: '10px solid transparent',
+								borderLeft: '10px solid transparent',
+								borderRight: '10px solid transparent',
+							},
+							{
+								width: '0',
+								height: '0',
+								borderBottom: '10px solid #FF7C43',
+								borderTop: '10px solid transparent',
+								borderLeft: '10px solid transparent',
+								borderRight: '10px solid transparent',
+							},
+						],
 					});
 
 					resultSummary.forEach((oruem) => {

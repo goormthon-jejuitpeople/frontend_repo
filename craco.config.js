@@ -6,6 +6,8 @@ module.exports = {
 			'@components': path.resolve(__dirname, 'src/components'),
 			'@pages': path.resolve(__dirname, 'src/pages'),
 			'@hooks': path.resolve(__dirname, 'src/hooks'),
+			'@mock': path.resolve(__dirname, 'src/mock'),
+			'@api': path.resolve(__dirname, 'src/api'),
 		},
 	},
 };

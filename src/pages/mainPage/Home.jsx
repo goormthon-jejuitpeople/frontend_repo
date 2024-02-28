@@ -1,27 +1,33 @@
 import { useState, useEffect } from 'react';
-// import Jeju_Oreum from '../test/Jeju_Oreum.json';
-import Jeju_Oreum_Desc from '../test/Juju_Oreum_Desc.json';
+import Selector from '@components/TimeDropdown';
+import MainModal from '@components/MainModal';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
 
-// eslint-disable-next-line react/prop-types
-
-// const oruem_data = Jeju_Oreum.data;
 const oruem_data = Jeju_Oreum_Desc.data;
-// console.log(oruem_data);
-const NearbyStoreMap = () => {
+
+const Home = () => {
 	const navigate = useNavigate();
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [oruemData, setOreumData] = useState({});
+	const [currentLatLng, setCurrentLatLng] = useState({ lat: '', lng: '' });
+	const [currentLocation, setCurrentLocation] = useState({});
+
+	const [isSelectMountain, setIsSelectMountain] = useState(true);
+	const [isSelectSea, setIsSelectSea] = useState(false);
+
 	useEffect(() => {
 		// 사용자 좌표 얻어오기 & Map생성
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
+					console.log('position', position);
 					const lat = position.coords.latitude;
 					const lng = position.coords.longitude;
 
+					setCurrentLatLng({ lat, lng });
 					const container = document.getElementById('map');
 					const userLocation = new kakao.maps.LatLng(lat, lng);
 					const options = {
@@ -40,6 +46,36 @@ const NearbyStoreMap = () => {
 						fillOpacity: 0.6,
 					});
 					circle.setMap(map);
+
+					// 주소-좌표 변환 객체를 생성합니다
+					var geocoder = new kakao.maps.services.Geocoder();
+
+					searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+
+					function searchAddrFromCoords(coords, callback) {
+						// 좌표로 행정동 주소 정보를 요청합니다
+						geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);
+					}
+
+					// 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
+					function displayCenterInfo(result, status) {
+						if (status === kakao.maps.services.Status.OK) {
+							// var infoDiv = document.getElementById('centerAddr');
+
+							console.log('result', result);
+							setCurrentLocation(result[0]);
+
+							// for (var i = 0; i < result.length; i++) {
+							// 	// 행정동의 region_type 값은 'H' 이므로
+							// 	if (result[i].region_type === 'H') {
+							// 		infoDiv.innerHTML = result[i].address_name;
+							// 		break;
+							// 	}
+							// }
+						}
+						// console.log(infoDiv.innerHTML);
+						// let location = infoDiv.innerHTML;
+					}
 
 					oruem_data.forEach((oruem) => {
 						console.log(oruem);
@@ -83,7 +119,11 @@ const NearbyStoreMap = () => {
 	}, []);
 
 	return (
-		<>
+		<div
+			style={{
+				position: 'relative',
+			}}
+		>
 			<div
 				id='map'
 				style={{
@@ -92,6 +132,27 @@ const NearbyStoreMap = () => {
 					zIndex: 0,
 				}}
 			></div>
+			<Toggle>
+				<Btn
+					className={isSelectMountain ? 'mountain' : ''}
+					onClick={() => {
+						setIsSelectMountain(true);
+						setIsSelectSea(false);
+					}}
+				>
+					산 지역 ⛰️
+				</Btn>
+				<SeaBtn
+					className={isSelectSea ? 'sea' : ''}
+					onClick={() => {
+						setIsSelectMountain(false);
+						setIsSelectSea(true);
+					}}
+				>
+					바다 지역 🌊
+				</SeaBtn>
+			</Toggle>
+			{/* 핀에 대한 오름상세 모달 */}
 			{isOpen && oruemData ? (
 				<Modal>
 					<SlideDown
@@ -125,9 +186,63 @@ const NearbyStoreMap = () => {
 					</div>
 				</Modal>
 			) : null}
-		</>
+			<MainModal currentLocation={currentLocation} />
+			<Selector />
+		</div>
 	);
 };
+
+const Toggle = styled.div`
+	z-index: 100;
+	position: absolute;
+
+	top: 65px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	display: flex;
+	border-radius: 8px 0px 0px 8px;
+	overflow: hidden;
+`;
+
+const Btn = styled.button`
+	display: flex;
+	width: 120px;
+	padding: 9px 16px;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+	gap: 10px;
+
+	font-weight: bold;
+
+	border-radius: 8px 0px 0px 8px;
+	border: none;
+
+	cursor: pointer;
+
+	color: ${(props) => (props.className == 'mountain' ? `white` : '#525463')};
+	background-color: ${(props) => (props.className == 'mountain' ? `#3dcb98` : 'white')};
+`;
+
+const SeaBtn = styled.button`
+	display: flex;
+	width: 120px;
+	padding: 9px 16px;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+	gap: 10px;
+
+	font-weight: bold;
+
+	border-radius: 0px 8px 8px 0px;
+	border: none;
+
+	cursor: pointer;
+
+	color: ${(props) => (props.className == 'sea' ? `white` : '#525463')};
+	background-color: ${(props) => (props.className == 'sea' ? `#3dcb98` : 'white')};
+`;
 
 const Modal = styled.div`
 	text-align: left;
@@ -251,4 +366,4 @@ const DetailButton = styled.button`
 	cursor: pointer;
 `;
 
-export default NearbyStoreMap;
+export default Home;

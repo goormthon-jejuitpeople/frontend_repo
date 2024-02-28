@@ -1,119 +1,909 @@
+// 20240228232154
+// https://gis.jeju.go.kr/rest/JejuOleumVRImg/getOleumADetailList
+
 {
-    "currentCount": 10,
-    "data": [
-        {
-            "경도": "126.7772830",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 51,
-            "설명": "비고 51m의 원형 화구를 가진 오름이다. 거칠지 않은 산 체와 완만한 탐방로가 있어 여유로운 분위기의 오름이다.",
-            "오름명": "아부오름",
-            "오름영문명": "abu",
-            "위도": "33.44887500",
-            "위치": "제주시 구좌읍 송당리",
-            "표고(m)": "301.4"
-        },
-        {
-            "경도": "126.8306516",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 58,
-            "설명": "비고 58m의 원형 화구를 지닌 화산체이다. 잡목들이 거의 없어 그늘을 찾기 어렵지만 짧은 시간 안에 큰 무리없이 탐방이 가능하다.",
-            "오름명": "아끈다랑쉬",
-            "오름영문명": "akkeundalangswi",
-            "위도": "33.47413717",
-            "위치": "제주시 구좌읍 세화리",
-            "표고(m)": "198.0"
-        },
-        {
-            "경도": "126.8856750",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 154,
-            "설명": "비고 154m. 말굽형 형태의 오름. 산체가 밤알을 닮아 알밤오름이라 명칭되었다.",
-            "오름명": "알밤오름",
-            "오름영문명": "albam",
-            "위도": "33.48075700",
-            "위치": "제주시 조천읍 선흘리",
-            "표고(m)": "393.6"
-        },
-        {
-            "경도": "126.7131350",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 51,
-            "설명": "비고 51m의 원추형 화구를 지닌 화산체이다.",
-            "오름명": "알오름",
-            "오름영문명": "al",
-            "위도": "33.48974600",
-            "위치": "서귀포시 성산읍 시흥리",
-            "표고(m)": "145.9"
-        },
-        {
-            "경도": "126.7571260",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 93,
-            "설명": "비고 93m의 말굽형 형태의 오름이다. 오름 전체에 초지가 있고. 소나무. 청미래덩굴 등이 자생한다. 계절별로 여러 종류의 야생화를 볼 수 있다.",
-            "오름명": "안돌오름",
-            "오름영문명": "andol",
-            "위도": "33.45581400",
-            "위치": "제주시 구좌읍 송당리",
-            "표고(m)": "368.1"
-        },
-        {
-            "경도": "126.6081240",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 91,
-            "설명": "비고 91m. 말굽형(북동향) 형태의 오름. 오름 기슭 아래에 있는 샘터를 중심으로 안쪽과 바깥쪽에 있는 두 화산체를 두고 안새미와 밧새미라고 부른다.",
-            "오름명": "안세미",
-            "오름영문명": "ansemi",
-            "위도": "33.46709800",
-            "위치": "제주시 봉개동",
-            "표고(m)": "396.4"
-        },
-        {
-            "경도": "126.7897666",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 132,
-            "설명": "비고 132m의 원형 화구를 지닌 화산체이다. 예부터 약초가 많이 자생하고 있어 백약이오름이라 명칭되었다.",
-            "오름명": "백약이오름",
-            "오름영문명": "baeg-yagi",
-            "위도": "33.43680944",
-            "위치": "서귀포시 표선면 성읍리",
-            "표고(m)": "356.9"
-        },
-        {
-            "경도": "126.2658540",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 43,
-            "설명": "비고 43m의 북향 말굽형 굼부리를 지닌 화산체. 비고도 낮고 규모도 작은 편이다.",
-            "오름명": "밝은오름",
-            "오름영문명": "balgeun",
-            "위도": "33.36093500",
-            "위치": "제주시 한림읍 상명리",
-            "표고(m)": "182.5"
-        },
-        {
-            "경도": "126.6538018",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 142,
-            "설명": "비고 142m의 복합형 화구를 지닌 화산체이다. 바농은 바늘의 제주 방언을 말하며 과거 오름 주변에 유난히 가시덤불이 많아 명칭되었다.",
-            "오름명": "바농오름",
-            "오름영문명": "banong",
-            "위도": "33.45377549",
-            "위치": "제주시 조천읍 교래리",
-            "표고(m)": "552.1"
-        },
-        {
-            "경도": "126.7632900",
-            "데이터기준일자": "2021-11-30",
-            "비고(m)": 109,
-            "설명": "비고 109m의 말굽형 화산체이다.",
-            "오름명": "비치미오름",
-            "오름영문명": "bichimi",
-            "위도": "33.42639500",
-            "위치": "제주시 구좌읍 송당리",
-            "표고(m)": "344.1"
-        }
-    ],
-    "matchCount": 90,
-    "page": 1,
-    "perPage": 10,
-    "totalCount": 90
+	"resultCode": "200",
+	"reulstMsg": "success",
+	"resultSummary": [
+		{
+			"oleumKname": "아부오름",
+			"oleumEname": "abu",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 51,
+			"x": "126.777283002793",
+			"y": "33.4488750035003",
+			"explan": "비고 51m의 원형 화구를 가진 오름이다.  거칠지 않은 산 체와 완만한 탐방로가 있어 여유로운 분위기의 오름이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/abu.png"
+		},
+		{
+			"oleumKname": "아끈다랑쉬",
+			"oleumEname": "akkeundalangswi",
+			"oleumAddr": "제주시 구좌읍 세화리",
+			"oleumAltitu": 58,
+			"x": "126.830651633758",
+			"y": "33.4741371694275",
+			"explan": "비고 58m의 원형 화구를 지닌 화산체이다. 잡목들이 거의 없어 그늘을 찾기 어렵지만 짧은 시간 안에 큰 무리없이 탐방이 가능하다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/akkeundalangswi.png"
+		},
+		{
+			"oleumKname": "알오름",
+			"oleumEname": "al",
+			"oleumAddr": "서귀포시 성산읍 시흥리",
+			"oleumAltitu": 51,
+			"x": "126.885873550364",
+			"y": "33.4803782361653",
+			"explan": "비고 51m의 원추형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/al.png"
+		},
+		{
+			"oleumKname": "알밤오름",
+			"oleumEname": "albam",
+			"oleumAddr": "제주시 조천읍 선흘리",
+			"oleumAltitu": 154,
+			"x": "126.713134998186",
+			"y": "33.4897459998577",
+			"explan": "비고 154m, 말굽형 형태의 오름. 산체가 밤알을 닮아 알밤오름이라 명칭되었다.  ",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/albam.png"
+		},
+		{
+			"oleumKname": "안돌오름",
+			"oleumEname": "andol",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 93,
+			"x": "126.757126000221",
+			"y": "33.4558140033071",
+			"explan": "비고 93m의 말굽형 형태의 오름이다. 오름 전체에 초지가 있고, 소나무, 청미래덩굴 등이 자생한다. 계절별로 여러 종류의 야생화를 볼 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/andol.png"
+		},
+		{
+			"oleumKname": "안세미",
+			"oleumEname": "ansemi",
+			"oleumAddr": "제주시  봉개동",
+			"oleumAltitu": 91,
+			"x": "126.60812399877",
+			"y": "33.4670979965775",
+			"explan": "비고 91m, 말굽형(북동향) 형태의 오름. 오름 기슭 아래에 있는 샘터를 중심으로 안쪽과 바깥쪽에 있는 두 화산체를 두고 안새미와 밧새미라고 부른다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/ansemi.png"
+		},
+		{
+			"oleumKname": "백약이오름",
+			"oleumEname": "baeg-yagi",
+			"oleumAddr": "서귀포시  표선면 성읍리",
+			"oleumAltitu": 132,
+			"x": "126.789766576052",
+			"y": "33.4368094390949",
+			"explan": "비고 132m의 원형 화구를 지닌 화산체이다. 예부터 약초가 많이 자생하고 있어 백약이오름이라 명칭되었다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/baeg-yagi.png"
+		},
+		{
+			"oleumKname": "밝은오름",
+			"oleumEname": "balgeun",
+			"oleumAddr": "제주시 한림읍 상명리",
+			"oleumAltitu": 43,
+			"x": "126.265853999473",
+			"y": "33.3609349952072",
+			"explan": "비고 43m의 북향 말굽형 굼부리를 지닌 화산체. 비고도 낮고 규모도 작은 편이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/balgeun.png"
+		},
+		{
+			"oleumKname": "바농오름",
+			"oleumEname": "banong",
+			"oleumAddr": "제주시 조천읍 교래리",
+			"oleumAltitu": 142,
+			"x": "126.653801847857",
+			"y": "33.453775486425",
+			"explan": "비고 142m의 복합형 화구를 지닌 화산체이다. 바농은 바늘의 제주 방언을 말하며 과거 오름 주변에 유난히 가시덤불이 많아 명칭되었다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/banong.png"
+		},
+		{
+			"oleumKname": "비치미오름",
+			"oleumEname": "bichimi",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 109,
+			"x": "126.763290005027",
+			"y": "33.426394995602",
+			"explan": "비고 109m의 말굽형 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/batdol.png"
+		},
+		{
+			"oleumKname": "밧돌오름",
+			"oleumEname": "botdol",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 103,
+			"x": "126.762969999738",
+			"y": "33.4607160016323",
+			"explan": "비고 103m의 오름. 동쪽 봉우리와 서쪽 봉우리에 바윗돌이 박혀 있고, 양쪽 봉우리 사이 북사면으로 패인 골짜기가 북동쪽으로 벌어진 말굽형 화구를 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/bichimi.png"
+		},
+		{
+			"oleumKname": "천아오름",
+			"oleumEname": "cheona",
+			"oleumAddr": "제주시 한림읍 상대리",
+			"oleumAltitu": 49,
+			"x": "126.298607003267",
+			"y": "33.4049189970797",
+			"explan": "비고 49m의 말굽형(서남향) 화구를 지닌 화산체이다. 초낭(참나무)가 많아 붙여진 명칭이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/cheona.png"
+		},
+		{
+			"oleumKname": "칡오름",
+			"oleumEname": "chik",
+			"oleumAddr": "서귀포시  상효동",
+			"oleumAltitu": 96,
+			"x": "126.603737000843",
+			"y": "33.2833289955338",
+			"explan": "비고 96m의 원형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/chik.png"
+		},
+		{
+			"oleumKname": "대병악",
+			"oleumEname": "daebyeongak",
+			"oleumAddr": "서귀포시  안덕면 상창리",
+			"oleumAltitu": 132,
+			"x": "126.367577004229",
+			"y": "33.3062479982187",
+			"explan": "비고 132m의 말굽형 화구를 지닌 화산체이다. 소병악과 나란히 위치해있고 크기에 따라 대, 소병악이라 명칭되었다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/daebyeongak.png"
+		},
+		{
+			"oleumKname": "대수산봉",
+			"oleumEname": "daesusanbong",
+			"oleumAddr": "서귀포시 성산읍 고성리",
+			"oleumAltitu": 97,
+			"x": "126.90206899785",
+			"y": "33.4385219961039",
+			"explan": "비고 97m의 원형 화구를 지닌 화산체이다. 과거 봉수대 흔적이 어렴풋이 남아있다. 산정부를 제외한 전 사면이 삼나무와 해송으로 숲을 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/daesusanbong.png"
+		},
+		{
+			"oleumKname": "대왕산",
+			"oleumEname": "daewangsan",
+			"oleumAddr": "서귀포시 성산읍 수산리",
+			"oleumAltitu": 83,
+			"x": "126.872673001997",
+			"y": "33.455916998397",
+			"explan": "비고 83m의 말굽형(북서향) 화구를 지닌 화산체이다. 오름 사면으로 연결된 형세가 왕(王)자 형으로 생겼다하여 붙여진 명칭이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/daewangsan.png"
+		},
+		{
+			"oleumKname": "다랑쉬",
+			"oleumEname": "dalangswi",
+			"oleumAddr": "제주시 구좌읍 세화리",
+			"oleumAltitu": 227,
+			"x": "126.819862001527",
+			"y": "33.4752079977546",
+			"explan": "비고 227m의 원형 화구를 지닌 화산체이다. 오름으로서 갖춰야 할 입지와 환경이 뚜렷하고 규모가 큰 편이다. 당당한 기세와 위엄을 느낄 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dalangswi.png"
+		},
+		{
+			"oleumKname": "달산봉",
+			"oleumEname": "dalsanbong",
+			"oleumAddr": "서귀포시  표선면 하천리",
+			"oleumAltitu": 87,
+			"x": "126.832404998553",
+			"y": "33.3456380023865",
+			"explan": "비고 87m의 말굽형(동향) 화구를 지닌 화산체이다. 산 체는 세 개의 봉우리가 능선으로 연결되어 길게 누워있는 형태이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dalsanbong.png"
+		},
+		{
+			"oleumKname": "당오름",
+			"oleumEname": "dang",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 69,
+			"x": "126.777915997691",
+			"y": "33.4683530033897",
+			"explan": "비고 69m의 오름. 말굽형 화구를 지닌 화산체이다. 전체적으로 나직하고 둥그스름한 몸집의 모양이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dang.png"
+		},
+		{
+			"oleumKname": "당산봉",
+			"oleumEname": "dangsanbong",
+			"oleumAddr": "제주시  한경면 용수리",
+			"oleumAltitu": 118,
+			"x": "126.172981000893",
+			"y": "33.3088260022514",
+			"explan": "비고 118m의 복합형 화구를 지닌 화산체이다. 동남쪽 사면은 둥그스름하면서 가파르고, 곳곳에 암층이 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dangsanbong.png"
+		},
+		{
+			"oleumKname": "단산",
+			"oleumEname": "dansan",
+			"oleumAddr": "서귀포시 대정읍 인성리",
+			"oleumAltitu": 113,
+			"x": "126.288718994737",
+			"y": "33.2439380002828",
+			"explan": "비고 113m의 원추형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dansan.png"
+		},
+		{
+			"oleumKname": "도청오름",
+			"oleumEname": "docheong",
+			"oleumAddr": "서귀포시  표선면 표선리",
+			"oleumAltitu": 70,
+			"x": "126.814338995699",
+			"y": "33.3154449984629",
+			"explan": "비고 70m의 말굽형 화산체이다. 매오름과 이어져 있어 마치 두 오름이 하나의 오름처럼 보인다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/docheong.png"
+		},
+		{
+			"oleumKname": "독자봉",
+			"oleumEname": "dokjabong",
+			"oleumAddr": "서귀포시 성산읍 신산리",
+			"oleumAltitu": 79,
+			"x": "126.854476998769",
+			"y": "33.3871189951517",
+			"explan": "비고 79m의 말굽형(남동향) 화구를 지닌 화산체이다. 정상부 한 쪽에 봉수대 터가 남아있다. 제주올레 3코스를 지난다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dokjabong.png"
+		},
+		{
+			"oleumKname": "돔배오름",
+			"oleumEname": "dombae",
+			"oleumAddr": "제주시 조천읍 교래리",
+			"oleumAltitu": 36,
+			"x": "126.668571002694",
+			"y": "33.4290619995447",
+			"explan": "비고 36m, 원형 화구를 가진 화산체. 돔배는 제주 방언으로 도마를 말하는데 오름 모양새가 도마의 모양과 닮아 명칭되었다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dombae.png"
+		},
+		{
+			"oleumKname": "돛오름",
+			"oleumEname": "dot",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 129,
+			"x": "126.801516579749",
+			"y": "33.4810713846193",
+			"explan": "비고 129m의 원형 화구를 지닌 화산체이다. 비자림 서남쪽으로 이어져 있으며 천연기념물 제374호로서 비자나무 대군락을 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dot.png"
+		},
+		{
+			"oleumKname": "둔지봉",
+			"oleumEname": "dunjibong",
+			"oleumAddr": "제주시 구좌읍 한동리",
+			"oleumAltitu": 152,
+			"x": "126.79534100451",
+			"y": "33.5027730039287",
+			"explan": "비고 152m의 말굽형(남향) 화구를 가진 화산체이다. 소나무, 삼나무, 편백나무 군락으로 이루어져 있으며 해송과 억새 또한 넓게 분포되어 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dunjibong.png"
+		},
+		{
+			"oleumKname": "두산봉",
+			"oleumEname": "dusanbong",
+			"oleumAddr": "서귀포시 성산읍 시흥리",
+			"oleumAltitu": 101,
+			"x": "126.885353003749",
+			"y": "33.4811479954512",
+			"explan": "비고 101m의 복합형 화구를 지닌 화산체이다. 이중식 화산체. 동남사면에 이르는 화구륜은 침식되어 절벽을 이루고, 북서쪽 사면에는 풀밭이 평지를 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/dusanbong.png"
+		},
+		{
+			"oleumKname": "어대오름",
+			"oleumEname": "eodae",
+			"oleumAddr": "제주시 구좌읍 덕천리",
+			"oleumAltitu": 55,
+			"x": "126.760841705975",
+			"y": "33.4956497827199",
+			"explan": "비고 55m의 말굽형(북서향) 화구를 가진 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/eodae.png"
+		},
+		{
+			"oleumKname": "어도오름",
+			"oleumEname": "eodo",
+			"oleumAddr": "제주시 애월읍 봉성리",
+			"oleumAltitu": 73,
+			"x": "126.307381002933",
+			"y": "33.4210050014851",
+			"explan": "비고 73m의 말굽형(북향) 화구를 가진 화산체. 경사가 완만하고 산책로가 잘 정비되어있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/eodo.png"
+		},
+		{
+			"oleumKname": "은월봉",
+			"oleumEname": "eunwolbong",
+			"oleumAddr": "제주시 구좌읍 종달리",
+			"oleumAltitu": 75,
+			"x": "126.854477002951",
+			"y": "33.4689599984297",
+			"explan": "비고 75m의 말굽형(북동향) 화구를 지닌 화산체이다. 남동쪽에 소나무와 삼나무가 조림되어 깊은 숲을 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/eunwolbong.png"
+		},
+		{
+			"oleumKname": "갑선이오름",
+			"oleumEname": "gabseon-i",
+			"oleumAddr": "서귀포시  표선면 가시리",
+			"oleumAltitu": 83,
+			"x": "126.781844998345",
+			"y": "33.3599510006606",
+			"explan": "비고 83m의 말굽형 화구를 지닌 화산체이다. 껍질을 미처 벗지 못한 매미의 굼벵이와 그 모습이 닮아 붙여진 명칭이다. ",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gabseon-i.png"
+		},
+		{
+			"oleumKname": "개오름",
+			"oleumEname": "gae",
+			"oleumAddr": "서귀포시  표선면 성읍리",
+			"oleumAltitu": 130,
+			"x": "126.772675003093",
+			"y": "33.4230159952759",
+			"explan": "비고 130m의 원추형 화구를 지닌 화산체이다. 전망권이 괜찮은 편이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gae.png"
+		},
+		{
+			"oleumKname": "가마오름",
+			"oleumEname": "gama",
+			"oleumAddr": "제주시 한경면 청수리",
+			"oleumAltitu": 51,
+			"x": "126.246627995645",
+			"y": "33.3053209987211",
+			"explan": "비고 51m 말굽형(북동향) 화구를 지닌 화산체. 일제시대 일본군이 주둔했던 곳으로 현재도 인공적으로 파인 수직굴이 존재한다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gama.png"
+		},
+		{
+			"oleumKname": "감낭오름",
+			"oleumEname": "gamnang",
+			"oleumAddr": "서귀포시  안덕면 동광리",
+			"oleumAltitu": 45,
+			"x": "126.35050200481",
+			"y": "33.3246840004519",
+			"explan": "비고 45m의 말굽형 화구를 지닌 화산체. 지금은 아니지만, 이전에 오름 주변에 감나무가 많아 지어진 명칭이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gamnang.png"
+		},
+		{
+			"oleumKname": "가세오름",
+			"oleumEname": "gase",
+			"oleumAddr": "서귀포시  표선면 토산리",
+			"oleumAltitu": 101,
+			"x": "126.781090003627",
+			"y": "33.3312949978439",
+			"explan": "비고 101m의 말굽형(남서향) 화구를 지닌 화산체이다. 오름의 형세가 가세(가위)를 닮았다고 해서 붙여진 명칭이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gase.png"
+		},
+		{
+			"oleumKname": "가시오름",
+			"oleumEname": "gasi",
+			"oleumAddr": "서귀포시 대정읍 동일리",
+			"oleumAltitu": 77,
+			"x": "126.243865995463",
+			"y": "33.2472080022796",
+			"explan": "비고 77m의 말굽형(남서향) 화구를 지닌 화산체이다. 오름사면에 가시나무가 많이 자생하여 붙여진 명칭이다. ",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gasi.png"
+		},
+		{
+			"oleumKname": "거린오름",
+			"oleumEname": "geolin",
+			"oleumAddr": "서귀포시  안덕면 동광리",
+			"oleumAltitu": 68,
+			"x": "126.332618997183",
+			"y": "33.3049130037155",
+			"explan": "비고 68m의 원추형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geolin.png"
+		},
+		{
+			"oleumKname": "걸리오름",
+			"oleumEname": "geolli",
+			"oleumAddr": "서귀포시 성산읍 신풍리",
+			"oleumAltitu": 14,
+			"x": "126.815574995431",
+			"y": "33.3763309959694",
+			"explan": "비고가 14m 밖에 되지 않는 화산체로 오름이라 부르기 어렵지만, 산책로\n정비는 잘 되어있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geolli.png"
+		},
+		{
+			"oleumKname": "거문오름",
+			"oleumEname": "geomun",
+			"oleumAddr": "제주시 조천읍 선흘리",
+			"oleumAltitu": 112,
+			"x": "126.720298996884",
+			"y": "33.4562680001411",
+			"explan": "비고 112m의 복합형 화구를 가진 화산체. 제주에서 유일하게 유네스코 세계자연유산으로 등재된 오름이다. 넓고 커다란 굼부리와 아홉 개로 이어지는 봉우리가 장관이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geomun.png"
+		},
+		{
+			"oleumKname": "거슨세미",
+			"oleumEname": "geoseunsemi",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 125,
+			"x": "126.759544002457",
+			"y": "33.4505770012351",
+			"explan": "비고 125m의 말굽형(서향) 형태의 오름. 늦가을 은빛 물결의 억새 경관을 볼 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geoseunsemi.png"
+		},
+		{
+			"oleumKname": "갯거리오름",
+			"oleumEname": "getgeoli",
+			"oleumAddr": "제주시 한림읍 명월리",
+			"oleumAltitu": 69,
+			"x": "126.292930995382",
+			"y": "33.3766629970865",
+			"explan": "비고 69m의 말굽형(서향) 화구를 지닌 화산체이다. 오름의 형세를 두고 개가 꼬리를 끌고 누워있는 모습과 같다고 하여 붙여진 명칭이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/getgeoli.png"
+		},
+		{
+			"oleumKname": "극락오름",
+			"oleumEname": "geuglak",
+			"oleumAddr": "제주시 애월읍 고성리",
+			"oleumAltitu": 64,
+			"x": "126.414977996949",
+			"y": "33.4362339959044",
+			"explan": "비고 64m의 말굽형(북서향) 화구를 가진 화산체이다. 정상 부근을 비롯해 사면에 걸쳐 소나무가 군락을 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geuglak.png"
+		},
+		{
+			"oleumKname": "금오름",
+			"oleumEname": "geum",
+			"oleumAddr": "제주시 한림읍 금악리",
+			"oleumAltitu": 178,
+			"x": "126.305847003129",
+			"y": "33.3572200021108",
+			"explan": "비고 178m의 원형(화구호) 화구를 지닌 화산체이다. 타원형의 분화구 내부에는 연중 물이 고이거나 습지를 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/geum.png"
+		},
+		{
+			"oleumKname": "고근산",
+			"oleumEname": "gogeunsan",
+			"oleumAddr": "서귀포시  서호동",
+			"oleumAltitu": 171,
+			"x": "126.514197999404",
+			"y": "33.2680820035083",
+			"explan": "비고 171m의 원형 화구를 지닌 화산체이다. 제주 올레 7-1코스 중간 지점 위치해 있다. 억새 군락을 이루고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gogeunsan.png"
+		},
+		{
+			"oleumKname": "궁대악",
+			"oleumEname": "gungdaeak",
+			"oleumAddr": "서귀포시 성산읍 수산리",
+			"oleumAltitu": 54,
+			"x": "126.823044003591",
+			"y": "33.4357069962101",
+			"explan": "비고 54m의 복합형 화구를 지닌 화산체이다. 전 사면을 따라 삼나무와 소나무가 숲을 이루고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gungdaeak.png"
+		},
+		{
+			"oleumKname": "군산",
+			"oleumEname": "gunsan",
+			"oleumAddr": "서귀포시  안덕면 창천리",
+			"oleumAltitu": 280,
+			"x": "126.370857002556",
+			"y": "33.2519379958313",
+			"explan": "비고 280m의 원추형(라바돔) 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/gunsan.png"
+		},
+		{
+			"oleumKname": "이달봉",
+			"oleumEname": "idalbong",
+			"oleumAddr": "제주시 애월읍 봉성리 ",
+			"oleumAltitu": 119,
+			"x": "126.348380997736",
+			"y": "33.3638380038967",
+			"explan": "비고 119m의 원추형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/idalbong.png"
+		},
+		{
+			"oleumKname": "이달이촛대봉",
+			"oleumEname": "idari-chotdaebong",
+			"oleumAddr": "제주시 애월읍 봉성리",
+			"oleumAltitu": 86,
+			"x": "126.347038002609",
+			"y": "33.3664469964412",
+			"explan": "비고 86m의 원추형 화구를 가진 화산체. 이달봉과 쌍둥이 화산체이다. 유난히 봉긋하게 솟은 봉우리 모습을 촛대에 비유하여 명칭하였다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/idari-chotdaebong.png"
+		},
+		{
+			"oleumKname": "인정오름",
+			"oleumEname": "injeong",
+			"oleumAddr": "서귀포시  토평동",
+			"oleumAltitu": 49,
+			"x": "126.585411000937",
+			"y": "33.2836489984721",
+			"explan": "비고 49m의 원형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/injeong.png"
+		},
+		{
+			"oleumKname": "자배봉",
+			"oleumEname": "jabaebong",
+			"oleumAddr": "서귀포시 남원읍 위미리",
+			"oleumAltitu": 111,
+			"x": "126.675797001972",
+			"y": "33.2999920019252",
+			"explan": "비고 111m의 원형 화구를 지닌 화산체이다. 비고가 꽤 높지만 중간 능선을 따라 한 바퀴를 돌아볼 수 있는 산책로가 잘 정비되어있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jabaebong.png"
+		},
+		{
+			"oleumKname": "제지기오름",
+			"oleumEname": "jejigi",
+			"oleumAddr": "서귀포시  보목동",
+			"oleumAltitu": 85,
+			"x": "126.609946996497",
+			"y": "33.2417489982173",
+			"explan": "비고 85m의 원추형 화산체. 올레길 6코스를 지난다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jejigi.png"
+		},
+		{
+			"oleumKname": "저지오름",
+			"oleumEname": "jeoji",
+			"oleumAddr": "제주시  한경면 저지리",
+			"oleumAltitu": 104,
+			"x": "126.250900002409",
+			"y": "33.3341559976401",
+			"explan": "비고 104m의 원형 화구를 지닌 화산체이다. 제주올레 13코스의 종점에 위치해 있다. 전망대에서 한라산을 포함, 주변 오름들을 한눈에 볼 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jeoji.png"
+		},
+		{
+			"oleumKname": "정물오름",
+			"oleumEname": "jeongmul",
+			"oleumAddr": "제주시 한림읍 금악리",
+			"oleumAltitu": 151,
+			"x": "126.329353004612",
+			"y": "33.3394279966778",
+			"explan": "비고 151m의 말굽형(북서향) 화구를 지닌 화산체이다. 기슭에 샘이 있어 정물오름이라 명칭되었다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jeongmul.png"
+		},
+		{
+			"oleumKname": "제석오름",
+			"oleumEname": "jeseok",
+			"oleumAddr": "서귀포시 표선면 하천리",
+			"oleumAltitu": 48,
+			"x": "126.83625027329",
+			"y": "33.3474657110861",
+			"explan": "비고 48m의 원추형 화구를 지닌 화산체이다. 전 사면에 걸쳐 소나무를 비롯한 잡목들이 숲을 이루며 오름의 기슭까지 밀감 밭으로 되어있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jeseok.png"
+		},
+		{
+			"oleumKname": "지미봉",
+			"oleumEname": "jimibong",
+			"oleumAddr": "제주시 구좌읍 종달리",
+			"oleumAltitu": 160,
+			"x": "126.901496998696",
+			"y": "33.4953270030142",
+			"explan": "비고 160m 말굽형 화산체. 제주 동부 해안가에 위치해 있어 일출봉과 우도를 \n전망하기에 좋다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jimibong.png"
+		},
+		{
+			"oleumKname": "좌보미",
+			"oleumEname": "jwabomi",
+			"oleumAddr": "서귀포시  표선면 성읍리",
+			"oleumAltitu": 112,
+			"x": "126.806762718641",
+			"y": "33.4360951579594",
+			"explan": "비고 112m의 말굽형(남향) 화구를 지닌 화산체이다. 5개의 큰 봉우리가 서로 연결되어 하나의 기형적 형태의 커다란 산체를 형성한 형태이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/jwabomi.png"
+		},
+		{
+			"oleumKname": "모구리오름",
+			"oleumEname": "moguli",
+			"oleumAddr": "서귀포시 성산읍 난산리",
+			"oleumAltitu": 82,
+			"x": "126.828400002371",
+			"y": "33.4080430001506",
+			"explan": "비고 82m의 말굽형(남동향) 화구를 지닌 화산체이다. 어미 개가 새끼를 껴안은 모습이라 해서 모구리라 명칭되었다. 굼부리 중심에 다시 알오름이라는 새끼오름이 자리하고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/moguli.png"
+		},
+		{
+			"oleumKname": "모지오름",
+			"oleumEname": "moji",
+			"oleumAddr": "서귀포시  표선면 성읍리",
+			"oleumAltitu": 86,
+			"x": "126.767769003791",
+			"y": "33.3938290023631",
+			"explan": "비고 86m의 말굽형 화산체이다. 굼부리안에 알오름이 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/moji.png"
+		},
+		{
+			"oleumKname": "무악(개오름)",
+			"oleumEname": "muak",
+			"oleumAddr": "서귀포시  안덕면 상천리",
+			"oleumAltitu": 126,
+			"x": "126.369118004748",
+			"y": "33.3155359959427",
+			"explan": "비고 126m의 오름. 오름 모양이 개가 누워있는 모습과 비슷하다하여 개오름이라고도 불린다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/muak.png"
+		},
+		{
+			"oleumKname": "명월오름",
+			"oleumEname": "myeongwol",
+			"oleumAddr": "제주시 한림읍 명월리",
+			"oleumAltitu": 39,
+			"x": "126.279258998147",
+			"y": "33.3823239987853",
+			"explan": "비고 39m의 말굽형 화산체. 애초에 산체가 낮고, 세월이 흘러 개간과 변화로 인해\n 아쉽지만 오름으로서의 매력은 낮다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/myeongwol.png"
+		},
+		{
+			"oleumKname": "묘산봉",
+			"oleumEname": "myosanbong",
+			"oleumAddr": "제주시 구좌읍 서김녕리",
+			"oleumAltitu": 81,
+			"x": "126.744804004226",
+			"y": "33.5439219961845",
+			"explan": "비고 81m의 말굽형 화구를 지닌 화산체. 전 사면에 소나무를 비롯한 잡목들이 \n빽빽히 숲을 이룬다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/myosanbong.png"
+		},
+		{
+			"oleumKname": "남산봉",
+			"oleumEname": "namsanbong",
+			"oleumAddr": "서귀포시 성산읍 신풍리",
+			"oleumAltitu": 54,
+			"x": "126.810814003359",
+			"y": "33.3842890028407",
+			"explan": "비고 54m의 원형 화구를 지닌 화산체이다. 과거 오름 정상에 봉수대가 있었고 아직도 봉수대 터 자리가 뚜렷하게 남아있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/namsanbong.png"
+		},
+		{
+			"oleumKname": "낭끼오름",
+			"oleumEname": "nangkki",
+			"oleumAddr": "서귀포시 성산읍 수산리",
+			"oleumAltitu": 40,
+			"x": "126.841972004535",
+			"y": "33.4353030028311",
+			"explan": "비고 40m의 원형 화구를 지닌 화산체이다. 정상에 전망대가 있으며 비고가 낮아 오르는데 큰 어려움이 없고, 전망도 좋은 편이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/nangkki.png"
+		},
+		{
+			"oleumKname": "넉시악",
+			"oleumEname": "neoksiak",
+			"oleumAddr": "서귀포시 남원읍 의귀리",
+			"oleumAltitu": 56,
+			"x": "126.714599996114",
+			"y": "33.3055649987612",
+			"explan": "비고 56m의 말굽형 화구를 지닌 화산체이다. 기슭 아래와 주변이 밀감밭으로 개간되었지만 산책로를 따라 깊은 숲을 이루고 있어 탐방하기 좋다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/neoksiak.png"
+		},
+		{
+			"oleumKname": "늡서리",
+			"oleumEname": "neubseoli",
+			"oleumAddr": "제주시 조천읍 교래리",
+			"oleumAltitu": 59,
+			"x": "126.664939996318",
+			"y": "33.4417109969045",
+			"explan": "비고 59m, 말굽형(북동향)형태의 오름. 분화구 외부 경사진 곳에 자연림이 무성하게 숲을 이루고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/neubseoli.png"
+		},
+		{
+			"oleumKname": "높은오름",
+			"oleumEname": "nopeun",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 175,
+			"x": "126.792419002107",
+			"y": "33.4570880008268",
+			"explan": "비고 175m의 오름. 주변 일대에서 유일하게 고도가 400m 이상되는 오름이다. 넓은 원형의 분화구와 둘레가 500m에 달한다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/nopeun.png"
+		},
+		{
+			"oleumKname": "삼매봉",
+			"oleumEname": "sammaebong",
+			"oleumAddr": "서귀포시  서홍동",
+			"oleumAltitu": 104,
+			"x": "126.546309996035",
+			"y": "33.2442470034579",
+			"explan": "비고 104m의 복합형 화구를 지닌 화산체이다. 제주올레 6코스의 종점이자 7코스의 시작점에 위치해 있다. 서쪽으로 마라도와 가파도를 볼 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sammaebong.png"
+		},
+		{
+			"oleumKname": "생길이오름",
+			"oleumEname": "sengili",
+			"oleumAddr": "서귀포시 남원읍 신례리",
+			"oleumAltitu": 65,
+			"x": "126.642708002905",
+			"y": "33.3057589957126",
+			"explan": "비고 65m의 말굽형 화구를 지닌 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sengili.png"
+		},
+		{
+			"oleumKname": "서걸세",
+			"oleumEname": "seogeolse",
+			"oleumAddr": "서귀포시 남원읍 하례리",
+			"oleumAltitu": 50,
+			"x": "126.61840100299",
+			"y": "33.2809140003041",
+			"explan": "비고 50m의 원추형 화구를 지닌 화산체이다. 현재 오름 대분분이 밀감 밭으로 개간이 되어있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/seogeolse.png"
+		},
+		{
+			"oleumKname": "설오름",
+			"oleumEname": "seol",
+			"oleumAddr": "서귀포시  표선면 가시리",
+			"oleumAltitu": 98,
+			"x": "126.769950997714",
+			"y": "33.3709979963023",
+			"explan": "비고 98m의 말굽형 화구를 지닌 화산체이다. 가시리를 통과하는 가마천이 오름 서측 화구를 휘돌아 흐른다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/seol.png"
+		},
+		{
+			"oleumKname": "성불오름",
+			"oleumEname": "seongbul",
+			"oleumAddr": "제주시 구좌읍 송당리",
+			"oleumAltitu": 97,
+			"x": "126.749092005254",
+			"y": "33.4233019958139",
+			"explan": "비고 97m의 말굽형 화산체이다. 탐방로 정비가 잘 되어 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/seongbul.png"
+		},
+		{
+			"oleumKname": "섯알오름",
+			"oleumEname": "seot-al",
+			"oleumAddr": "서귀포시 대정읍 상모리",
+			"oleumAltitu": 21,
+			"x": "126.281274009564",
+			"y": "33.206500347327",
+			"explan": "비고 21m의 말굽형(서향) 화구를 지닌 화산체이다. 송악산 둘레에 줄지어 분포된 여러 개의 말굽형 알오름들 중 하나이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/seot-al.png"
+		},
+		{
+			"oleumKname": "서우봉",
+			"oleumEname": "seoubong",
+			"oleumAddr": "제주시 조천읍 함덕리",
+			"oleumAltitu": 106,
+			"x": "126.677505003232",
+			"y": "33.5457500006457",
+			"explan": "비고 106m의 오름. 원추형 화산체이다. 해안과 인접해 있어 오름을 오르며 푸른 바다를 함께 볼 수 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/seoubong.png"
+		},
+		{
+			"oleumKname": "새신오름",
+			"oleumEname": "sesin",
+			"oleumAddr": "서귀포시  한경면 청수리",
+			"oleumAltitu": 41,
+			"x": "126.238441001881",
+			"y": "33.2976609987304",
+			"explan": "비고 41m의 원형 화산체. ",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sesin.png"
+		},
+		{
+			"oleumKname": "식은이오름",
+			"oleumEname": "sigeuni",
+			"oleumAddr": "제주시 구좌읍 덕천리 ",
+			"oleumAltitu": 45,
+			"x": "126.747414004865",
+			"y": "33.4733010032904",
+			"explan": "비고 45m, 말굽형(남서향) 화구를 지닌 화산체이다. 기슭과 능선으로 이어지는 곳에 잡목들과 가시덤불 등이 빽빽히 숲을 이룸.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sigeuni.png"
+		},
+		{
+			"oleumKname": "식산봉",
+			"oleumEname": "sigsanbong",
+			"oleumAddr": "서귀포시 성산읍 오조리",
+			"oleumAltitu": 55,
+			"x": "126.919968004307",
+			"y": "33.4658429955381",
+			"explan": "비고 55m의 원추형 화구를 지닌 화산체이다. 기슭과 등성에 유독 바위가 많아 바위오름으로 잘 알려져 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sigsanbong.png"
+		},
+		{
+			"oleumKname": "소병악",
+			"oleumEname": "sobyeongak",
+			"oleumAddr": "서귀포시  안덕면 상창리",
+			"oleumAltitu": 93,
+			"x": "126.373634000469",
+			"y": "33.3084259995981",
+			"explan": "비고 93m의 말굽형 화구를 지닌 화산체이다. 대병악과 나란히 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/sobyeongak.png"
+		},
+		{
+			"oleumKname": "송악산",
+			"oleumEname": "songaksan",
+			"oleumAddr": "서귀포시 대정읍 상모리",
+			"oleumAltitu": 99,
+			"x": "126.289550997753",
+			"y": "33.2007029955203",
+			"explan": "비고 99m의 복합형 화산체. 정상에서 마라도, 가파도, 산방산, 한라산 등 제주 명소들을 비롯하여 해안 전망이 \n매우 좋다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/songaksan.png"
+		},
+		{
+			"oleumKname": "수산봉",
+			"oleumEname": "susanbong",
+			"oleumAddr": "제주시 애월읍 수산리",
+			"oleumAltitu": 92,
+			"x": "126.388648999146",
+			"y": "33.4735449971847",
+			"explan": "비고 92m,  원추형 분화구를 지니고 정상에 물이 고인 작은 연못이 있어 '물메' 혹은 정상에 봉수가 있어 '수산봉'이라 부른다. 제주올레 16코스에 포함되어 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/susanbong.png"
+		},
+		{
+			"oleumKname": "통오름",
+			"oleumEname": "tong",
+			"oleumAddr": "서귀포시 성산읍 난산리",
+			"oleumAltitu": 43,
+			"x": "126.855972001507",
+			"y": "33.3932799978166",
+			"explan": "비고 43m의 말굽형(서향) 화구를 지닌 화산체이다. 굼부리 안은 농경지로 개간이 되어 있다. 제주오름에 포함된 곳이기도 하다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/tong.png"
+		},
+		{
+			"oleumKname": "토산봉",
+			"oleumEname": "tosanbong",
+			"oleumAddr": "서귀포시  표선면 토산리",
+			"oleumAltitu": 75,
+			"x": "126.773849000665",
+			"y": "33.3239100013006",
+			"explan": "비고 75m의 복합형 화구를 지닌 화산체이다. 마을과 인접해있고 산책로 정비가 잘 되어있으며 제주올레 4코스를 지난다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/tosanbong.png"
+		},
+		{
+			"oleumKname": "따라비오름",
+			"oleumEname": "ttalabi",
+			"oleumAddr": "서귀포시  표선면 가시리",
+			"oleumAltitu": 107,
+			"x": "126.754287996223",
+			"y": "33.3889200029147",
+			"explan": "비고 107m의 복합형 화산체이다. 3개의 굼부리가 이어진 모습이 특징이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/ttalabi.png"
+		},
+		{
+			"oleumKname": "우진제비오름",
+			"oleumEname": "ujinjebi",
+			"oleumAddr": "제주시 조천읍 선흘리",
+			"oleumAltitu": 126,
+			"x": "126.698134998595",
+			"y": "33.467384002344",
+			"explan": "비고 126m의 오름. 둥글고 통통한 산체에 서쪽 봉우리가 주봉이며 북동쪽으로 벌어진 말굽형 화구체를 가진 화산체.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/ujinjebi.png"
+		},
+		{
+			"oleumKname": "월랑지",
+			"oleumEname": "wollangji",
+			"oleumAddr": "서귀포시 표선면 성읍리",
+			"oleumAltitu": 35,
+			"x": "126.809669523548",
+			"y": "33.4391263851634",
+			"explan": "비고 35m의 말굽형(북향) 화구를 지닌 화산체이다. 외부에서는 낮고 앙증맞은 모습이지만 산체 내부는 깊은 숲을 이루고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/wollangji.png"
+		},
+		{
+			"oleumKname": "원물오름",
+			"oleumEname": "wonmul",
+			"oleumAddr": "서귀포시  안덕면 동광리",
+			"oleumAltitu": 98,
+			"x": "126.344550997587",
+			"y": "33.322323001245",
+			"explan": "비고 80m의 말굽형 화구를 지닌 화산체. 비교적 완만한 경사이고 조망권 또한 괜찮은 편이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/wonmul.png"
+		},
+		{
+			"oleumKname": "열안지오름",
+			"oleumEname": "yeol-anji",
+			"oleumAddr": "제주시  봉개동",
+			"oleumAltitu": 54,
+			"x": "126.605355979872",
+			"y": "33.4730743449896",
+			"explan": "비고 54m의 말굽형(북향) 화구를 가진 화산체이다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/yeol-anji.png"
+		},
+		{
+			"oleumKname": "영천악",
+			"oleumEname": "yeongcheonak",
+			"oleumAddr": "서귀포시  상효동",
+			"oleumAltitu": 97,
+			"x": "126.600677000281",
+			"y": "33.2953379988292",
+			"explan": "비고 97m의 원형 화구를 지닌 화산체이다. 잘 정리된 산책로가 5.16도로까지 이어져있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/yeongcheonak.png"
+		},
+		{
+			"oleumKname": "영주산",
+			"oleumEname": "yeongjusan",
+			"oleumAddr": "서귀포시  표선면 성읍리",
+			"oleumAltitu": 176,
+			"x": "126.796244559182",
+			"y": "33.4045681582277",
+			"explan": "비고 176m의 말굽형 화구를 지닌 화산체이다. 높은 비고를 가졌기 때문에 정상에서의 조망권이 매우 좋다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/yeongjusan.png"
+		},
+		{
+			"oleumKname": "용눈이오름",
+			"oleumEname": "youngnuni",
+			"oleumAddr": "제주시 구좌읍 종달리",
+			"oleumAltitu": 88,
+			"x": "126.832689644018",
+			"y": "33.4598782883646",
+			"explan": "비고 88m의 복합형 화구를 지닌 화산체이다. 타 오름에 비해 능선과 화구의 조화가 매우 아름답다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/yongnuni.png"
+		},
+		{
+			"oleumKname": "유건에오름",
+			"oleumEname": "yugeone",
+			"oleumAddr": "서귀포시 성산읍 난산리",
+			"oleumAltitu": 75,
+			"x": "126.847068996304",
+			"y": "33.4135630001945",
+			"explan": "비고 75m의 원형 화구를 지닌 화산체이다. 세 개의 봉우리가 능선을 따라 이어지면서 원형의 굼부리를 형성하고 있다.",
+			"imgPath": "https://gis.jeju.go.kr/images/oleum/yugeone.png"
+		}
+	]
 }

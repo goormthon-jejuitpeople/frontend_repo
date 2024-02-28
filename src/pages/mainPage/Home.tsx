@@ -1,5 +1,5 @@
 import ReviewSummaryButton from '@components/ReviewSummaryButton';
-import Selector from '@components/Selector';
+import Selector from '@components/TimeDropdown';
 import NearbyStoreMap from '@components/kakaoMap';
 
 const Home = () => {
@@ -10,7 +10,8 @@ const Home = () => {
 			}}
 		>
 			{/* <NearbyStoreMap searchKeyword={'오름'} /> */}
-			<NearbyStoreMap />
+			{/* <NearbyStoreMap /> */}
+			<Selector  />
 		</div>
 	);
 };

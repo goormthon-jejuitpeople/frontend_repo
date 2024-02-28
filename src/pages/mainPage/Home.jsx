@@ -86,12 +86,25 @@ const Home = () => {
 						// let location = infoDiv.innerHTML;
 					}
 
+					var clusterer = new kakao.maps.MarkerClusterer({
+						map: map,
+						averageCenter: true,
+						minLevel: 3,
+					});
+
 					resultSummary.forEach((oruem) => {
 						console.log(oruem);
 						console.log('oruem', oruem.x);
 
 						// 결과값으로 받은 위치를 마커로 표시합니다
-						displayMarker(oruem);
+						// displayMarker(oruem);
+						var marker = new kakao.maps.Marker({
+							position: new kakao.maps.LatLng(oruem.y, oruem.x),
+							image: new kakao.maps.MarkerImage(CloudImg, new kakao.maps.Size(40, 56), {
+								offset: new kakao.maps.Point(27, 69),
+							}),
+						});
+						clusterer.addMarker(marker);
 					});
 
 					// 지도에 마커를 표시하고 클릭시 infowindow를 표시하는 함수입니다
@@ -104,11 +117,16 @@ const Home = () => {
 
 						// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
 						var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-						const marker = new kakao.maps.Marker({
+
+						const marker = new kakao.maps.MarkerClusterer({
 							map: map,
 							position: new kakao.maps.LatLng(place.y, place.x),
 							image: markerImage, // 마커이미지 설정
+							averageCenter: true,
 						});
+
+						// 클러스터러에 마커들을 추가합니다
+						clusterer.addMarkers(marker);
 
 						const infowindow = new kakao.maps.InfoWindow({
 							content: `<div style="padding:5px;font-size:12px;">${place.oleumKname}</div>`,

@@ -4,6 +4,9 @@ import MainModal from '@components/MainModal';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
+// import SunnyImg from '../../assets/icon_sunny.png';
+import CloudImg from '../../assets/cloud.png';
+import { Link } from 'react-router-dom';
 
 const oruem_data = Jeju_Oreum_Desc.data;
 
@@ -88,10 +91,17 @@ const Home = () => {
 					// 지도에 마커를 표시하고 클릭시 infowindow를 표시하는 함수입니다
 					function displayMarker(place) {
 						console.log('place', place);
-						// 마커를 생성하고 지도에 표시합니다
+
+						var imageSrc = CloudImg, // 마커이미지의 주소입니다
+							imageSize = new kakao.maps.Size(40, 56), // 마커이미지의 크기입니다
+							imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+						// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+						var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 						const marker = new kakao.maps.Marker({
 							map: map,
 							position: new kakao.maps.LatLng(place.위도, place.경도),
+							image: markerImage, // 마커이미지 설정
 						});
 
 						const infowindow = new kakao.maps.InfoWindow({
@@ -101,7 +111,7 @@ const Home = () => {
 						// 마커에 클릭이벤트를 등록합니다
 						kakao.maps.event.addListener(marker, 'click', function () {
 							// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-							infowindow.open(map, marker);
+							// infowindow.open(map, marker);
 							// modalOpen();
 							setIsOpen(true);
 
@@ -160,15 +170,16 @@ const Home = () => {
 							setIsOpen(false);
 						}}
 					></SlideDown>
-					<BlueDiv>적합한 장소를 찾았어요!</BlueDiv>
+					<BlueDiv>🤩 꿀꿀, 적합한 장소를 찾았어요!</BlueDiv>
 					<img
 						style={{ width: '100%', height: '136px', borderRadius: '8px' }}
 						src='https://cdn.san.chosun.com/news/photo/202205/15785_66304_337.jpg'
 					></img>
 					<Title>{oruemData.오름명}</Title>
-					<WeatherDiv>날씨정보...</WeatherDiv>
-					<div>테스트에서 작성해주신 이러이러한 부분을 반영하여, 저러저러한 이유로 이곳을 추천드려요.</div>
-					<div style={{ display: 'flex', gap: '10px' }}>
+					<WeatherDiv>기온 7’C 습도 10</WeatherDiv>
+					<Desc>테스트에서 작성해주신 이러이러한 부분을 반영하여, 저러저러한 이유로 이곳을 추천드려요.</Desc>
+					<div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '20px' }}>
+						<DetailButton to={`/detail`}>상세정보보기</DetailButton>
 						<MainButton
 							onClick={() => {
 								setIsOpen(false);
@@ -176,13 +187,6 @@ const Home = () => {
 						>
 							메인으로
 						</MainButton>
-						<DetailButton
-							onClick={() => {
-								navigate('/detail');
-							}}
-						>
-							상세정보보기
-						</DetailButton>
 					</div>
 				</Modal>
 			) : null}
@@ -249,7 +253,7 @@ const Modal = styled.div`
 	box-sizing: border-box;
 
 	width: 100%;
-	zindex: 100;
+	z-index: 100;
 	border-radius: 20px 20px 0px 0px;
 	background: #fff;
 	box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
@@ -262,7 +266,7 @@ const Modal = styled.div`
 	flex-direction: column;
 	gap: 9px;
 
-	padding: 20px 32px 40px 32px;
+	padding: 20px 32px 70px 32px;
 
 	animation: slideUp 0.5s ease-out forwards; /* 애니메이션 적용 */
 
@@ -289,17 +293,16 @@ const SlideDown = styled.div`
 `;
 
 const BlueDiv = styled.div`
-	color: #1d6ce0;
+	color: #ff7c43;
 	font-feature-settings:
 		'clig' off,
 		'liga' off;
-
-	/* KOR/H5ㅣ1.125rem */
+	/* KOR/H6ㅣ1rem */
 	font-family: Pretendard;
-	font-size: 18px;
+	font-size: 16px;
 	font-style: normal;
-	font-weight: 700;
-	line-height: 27px; /* 150% */
+	font-weight: 500;
+	line-height: 24px; /* 150% */
 	letter-spacing: -0.1px;
 `;
 
@@ -319,7 +322,9 @@ const Title = styled.div`
 `;
 
 const WeatherDiv = styled.div`
-	color: #1959b8;
+	align-self: start;
+	color: #ff7c43;
+	text-align: center;
 	font-feature-settings:
 		'clig' off,
 		'liga' off;
@@ -328,6 +333,21 @@ const WeatherDiv = styled.div`
 	font-style: normal;
 	font-weight: 700;
 	line-height: 18px; /* 150% */
+	letter-spacing: -0.1px;
+`;
+
+const Desc = styled.div`
+	color: #2b2d36;
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+
+	/* KOR/subtitle-1ㅣ0.875rem */
+	font-family: Pretendard;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 22px; /* 157.143% */
 	letter-spacing: -0.1px;
 `;
 
@@ -348,7 +368,7 @@ const MainButton = styled.button`
 	cursor: pointer;
 `;
 
-const DetailButton = styled.button`
+const DetailButton = styled(Link)`
 	box-sizing: border-box;
 	display: flex;
 	height: 52px;
@@ -360,7 +380,7 @@ const DetailButton = styled.button`
 
 	border-radius: 8px;
 	border: 1px solid #e1e1e8;
-	background: #5094fa;
+	background: #3dcb98;
 
 	color: white;
 	cursor: pointer;

@@ -41,7 +41,7 @@ const Modal = styled.div`
 	box-sizing: border-box;
 
 	width: 100%;
-	zindex: 100;
+	z-index: 50;
 	border-radius: 20px 20px 0px 0px;
 	background: #fff;
 	box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);

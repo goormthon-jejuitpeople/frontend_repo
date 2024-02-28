@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import styled from 'styled-components';
 
 const weatherIcon = { sunny: ['🌤️', '맑음'], rainy: ['🌧️', '비 옴'], cloudy: ['☁️', '흐림'] };
 const WeatherCard = ({ weather, detail, recommendation }) => {
@@ -17,12 +18,51 @@ const WeatherCard = ({ weather, detail, recommendation }) => {
 			</div>
 			{recommendation ? (
 				<div className='flex flex-col justify-center px-4 py-1 mb-12 gap-2.5 rounded-lg border border-[#FFE4CA] bg-[#FFF9F6] '>
-					<p className='font-bold text-orange'>추천하는 이유</p>
-					<div className='text-[#2B2D36]'>{recommendation}</div>
+					<Paragraph>추천하는 이유</Paragraph>
+					<Text className='text-[#2B2D36]'>{recommendation}</Text>
 				</div>
 			) : null}
 		</section>
 	);
 };
+const Rec = styled.div`
+	display: flex;
+	padding: 0.5625rem 1rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.625rem;
+	align-self: stretch;
+	border-radius: 0.5rem;
+	border: 1px solid #ffe4ca;
 
+	background: #fff9f6;
+`;
+
+const Text = styled.div`
+	color: var(--light-gray-gray-900, #2b2d36);
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+	/* KOR/paragraph */
+	font-family: Pretendard;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.375rem; /* 157.143% */
+	letter-spacing: -0.00625rem;
+`;
+const Paragraph = styled.p`
+	color: #ff7c43;
+
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+	font-family: Pretendard;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.375rem; /* 157.143% */
+	letter-spacing: -0.00625rem;
+`;
 export default WeatherCard;

@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import LocationIcon from '../assets/LocationIcon.svg';
 import WeatherCard from '@components/WeatherCard';
@@ -6,6 +6,8 @@ import ReviewSummaryButton from '@components/ReviewSummaryButton';
 import { mockReviews } from '@mock/mockReviewText';
 import Reivew from '@components/Reivew';
 import styled from 'styled-components';
+import Image from '../assets/Image.png';
+import Img2 from '../assets/Img2.png';
 
 const DetailOreum = () => {
 	const { detailId } = useParams();
@@ -13,7 +15,6 @@ const DetailOreum = () => {
 	const [searchParams] = useSearchParams();
 	const queryList = [...searchParams];
 	const oreumData = Object.fromEntries(queryList);
-	console.log('oreumData', oreumData);
 	return (
 		<main className='w-full pb-12'>
 			<header className='bg-[#FFF9F6] flex flex-col items-center justify-center pt-6 pb-4'>
@@ -36,7 +37,16 @@ const DetailOreum = () => {
 					recommendation='테스트에서 작성해주신 이러이러한 부분을 반영했어요.
 저러저러한 이유가 어쩌구 오름의 이러한 특징과 적합해 이곳을 추천드려요.'
 				/>
-				<h2 className='mb-4 text-lg font-extrabold'>장소 리뷰</h2>
+				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 특징</h2>
+				<div className='flex justify-around'>
+					<img src={Image} />
+					<img src={Img2} />
+				</div>
+				<PlaceFeature className='flex flex-col mt-4 mb-6'>
+					<PlaceIntro>장소에 대한 한 줄 소개</PlaceIntro>
+					<PlaceExplan>{oreumData.explan}</PlaceExplan>
+				</PlaceFeature>
+				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 리뷰</h2>
 				<div>
 					<ReviewSummaryButton />
 					<div className='flex flex-col gap-4'>
@@ -48,11 +58,52 @@ const DetailOreum = () => {
 			</section>
 			<section className='flex justify-center gap-4 mt-16 align-center'>
 				<TryAgain>추천 한번 더</TryAgain>
-				<GoHome>홈으로</GoHome>
+				<Link to='/'>
+					<GoHome>홈으로</GoHome>
+				</Link>
 			</section>
 		</main>
 	);
 };
+const PlaceFeature = styled.div`
+	display: flex;
+	padding: 0.5625rem 1rem;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.625rem;
+	flex: 1 0 0;
+	align-self: stretch;
+	border-radius: 0.5rem;
+	border: 1px solid #ffe4ca;
+
+	background: #fff9f6;
+`;
+const PlaceIntro = styled.p`
+	color: #ff7c43;
+
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+	font-family: Pretendard;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.375rem; /* 157.143% */
+	letter-spacing: -0.00625rem;
+`;
+const PlaceExplan = styled.p`
+	color: var(--light-gray-gray-900, #2b2d36);
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+	/* KOR/paragraph */
+	font-family: Pretendard;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.375rem; /* 157.143% */
+	letter-spacing: -0.00625rem;
+`;
 const TryAgain = styled.button`
 	display: flex;
 	height: 3.25rem;

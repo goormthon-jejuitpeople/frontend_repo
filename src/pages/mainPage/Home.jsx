@@ -149,6 +149,15 @@ const Home = () => {
 								offset: new kakao.maps.Point(27, 69),
 							}),
 						});
+
+						kakao.maps.event.addListener(marker, 'click', function () {
+							// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+							// infowindow.open(map, marker);
+							// modalOpen();
+							setIsOpen(true);
+							setOreumData(oruem);
+						});
+
 						clusterer.addMarker(marker);
 					});
 

@@ -1,6 +1,5 @@
 import ReviewSummaryButton from '@components/ReviewSummaryButton';
 import NearbyStoreMap from '@components/kakaoMap';
-import { relative } from 'path';
 
 const Landing = () => {
 	return (

@@ -39,7 +39,7 @@ const RecommendationForm = () => {
 		<main className='flex flex-col items-center mx-6 bg-white'>
 			<img src={Rectangle} className='mt-12' />
 			<h1 className='font-bold text-2xl text-[#181818]'>산/바다 추천받기</h1>
-			<div className='flex flex-col gap-2 mt-5'>
+			<div className='flex flex-col gap-2 mt-10'>
 				<button className='text-orange flex flex-col items-center justify-center h-8 px-4 py-1 gap-2.5 rounded-full border border-[#FFE4CA] bg-[#FFF9F6] text-center'>
 					관광지를 찾아보는 것이 귀찮을 때 🙀
 				</button>
@@ -48,11 +48,11 @@ const RecommendationForm = () => {
 				</button>
 			</div>
 			<p className='text-sm text-[#2B2D36] text-center mx-2 mt-6'>
-				<p className='font-bold '>
+				<p className='font-bold leading-7 '>
 					걱정마세요, 감귤이 AI가 추천해드릴게요. <br />
 					날씨, 위치, 활동에 따라
 				</p>
-				적당한 산과 바다의 관광 장소를 추천해드려요.{' '}
+				<p className='leading-7'>적당한 산과 바다의 관광 장소를 추천해드려요. </p>
 			</p>
 			<hr />
 			<div className='mb-20 flex flex-col gap-[3.125rem] mt-12 text-center'>
@@ -63,7 +63,7 @@ const RecommendationForm = () => {
 							<p>나는 이곳을 가고싶어요</p>
 							<p className='text-[#3DCB98]'>*필수</p>
 						</div>
-						<div className='flex gap-2'>
+						<div className='flex justify-center gap-2'>
 							<TagButton
 								label='⛰️산으로 갈래요'
 								onClick={() => handleClickLocation('산')}
@@ -80,7 +80,7 @@ const RecommendationForm = () => {
 							</TagButton>
 						</div>
 						<p className='my-3 mt-10 font-bold text-[#525463]'>거리는 이 정도가 좋아요</p>
-						<div className='flex justify-center gap-1'>
+						<div className='flex justify-center gap-2'>
 							<TagButton
 								label='차량 30분이하'
 								onClick={() => handleDistance('close')}

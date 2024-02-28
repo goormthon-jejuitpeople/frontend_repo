@@ -13,6 +13,7 @@ body {
 		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: darkgrey;
 }
 @layer base {
 	:root {
@@ -96,7 +97,8 @@ body {
 
 #root,
 .App {
-	width: 375px;
+	width: 393px;
 	background-color: #ffff;
 	margin: auto;
+	min-height: 100%;
 }

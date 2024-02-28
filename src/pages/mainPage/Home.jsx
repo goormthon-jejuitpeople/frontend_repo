@@ -1,6 +1,5 @@
 import ReviewSummaryButton from '@components/ReviewSummaryButton';
 import TagButton from '@components/TagButton';
-import NearbyStoreMap from '@components/kakaoMap';
 import RecommendationForm from '@pages/RecommendationForm';
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
 		>
 			{/* <NearbyStoreMap searchKeyword={'오름'} /> */}
 			{/* <NearbyStoreMap /> */}
-			<RecommendationForm />
 		</div>
 	);
 };

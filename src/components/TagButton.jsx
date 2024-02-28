@@ -15,7 +15,7 @@ const TagButton = ({ label, onClick, active, children }) => {
 	return (
 		<button className={buttonClasses} onClick={onClick}>
 			{children}
-			<p>{label}</p>
+			<p className='font-medium'>{label}</p>
 		</button>
 	);
 };

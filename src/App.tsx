@@ -1,3 +1,5 @@
+import DetailOreum from '@pages/DetailOreum';
+import RecommendationForm from '@pages/RecommendationForm';
 import Home from '@pages/mainPage/Home';
 import { Route, Routes } from 'react-router-dom';
 const App = () => {
@@ -6,6 +8,8 @@ const App = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Home />} />
+			<Route path='/detail' element={<DetailOreum />} />
+			<Route path='/form' element={<RecommendationForm />} />
 			{/* <Route path='/home' element={<Home />} /> */}
 		</Routes>
 	);

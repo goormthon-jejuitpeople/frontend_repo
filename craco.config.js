@@ -8,6 +8,7 @@ module.exports = {
 			'@hooks': path.resolve(__dirname, 'src/hooks'),
 			'@mock': path.resolve(__dirname, 'src/mock'),
 			'@api': path.resolve(__dirname, 'src/api'),
+			'@icons': path.resolve(__dirname, 'src/icons'),
 		},
 	},
 };

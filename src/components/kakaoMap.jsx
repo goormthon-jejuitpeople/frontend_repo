@@ -141,12 +141,12 @@ const NearbyStoreMap = () => {
 					function displayMarker(place) {
 						console.log('place', place);
 						// 마커를 생성하고 지도에 표시합니다
-						var marker = new kakao.maps.Marker({
+						const marker = new kakao.maps.Marker({
 							map: map,
 							position: new kakao.maps.LatLng(place.위도, place.경도),
 						});
 
-						var infowindow = new kakao.maps.InfoWindow({
+						const infowindow = new kakao.maps.InfoWindow({
 							content: `<div style="padding:5px;font-size:12px;">${place.오름명}</div>`,
 						});
 

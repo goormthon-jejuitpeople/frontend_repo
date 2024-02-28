@@ -10,6 +10,7 @@ import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
 
 const AIResult = () => {
+	console.log('왜');
 	const { detailId } = useParams();
 	const [searchParams] = useSearchParams();
 	const queryList = [...searchParams];
@@ -32,7 +33,7 @@ const AIResult = () => {
 				<h1 className='my-4 text-3xl font-extrabold'>{oreumData.oleumKname}</h1>
 				<WeatherCard
 					weather='sunny'
-					detail='기온 7도 습도 15% '
+					detail='기온 7도 습도 13% '
 					recommendation='테스트에서 작성해주신 이러이러한 부분을 반영했어요.
 저러저러한 이유가 어쩌구 오름의 이러한 특징과 적합해 이곳을 추천드려요.'
 				/>

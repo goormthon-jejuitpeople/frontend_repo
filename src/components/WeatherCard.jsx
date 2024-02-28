@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
-
+import Pig from '../assets/Pig.png';
 const weatherIcon = { sunny: ['🌤️', '맑음'], rainy: ['🌧️', '비 옴'], cloudy: ['☁️', '흐림'] };
 const WeatherCard = ({ weather, detail, recommendation }) => {
 	return (
@@ -19,7 +19,10 @@ const WeatherCard = ({ weather, detail, recommendation }) => {
 			{recommendation ? (
 				<div className='flex flex-col justify-center px-4 py-1 mb-12 gap-2.5 rounded-lg border border-[#FFE4CA] bg-[#FFF9F6] '>
 					<Paragraph>추천하는 이유</Paragraph>
-					<Text className='text-[#2B2D36]'>{recommendation}</Text>
+					<div>
+						<img src={Pig} />
+						<Text className='text-[#2B2D36]'>{recommendation}</Text>
+					</div>
 				</div>
 			) : null}
 		</section>

@@ -1,41 +1,61 @@
 import TagButton from '@components/TagButton';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Rectangle from '../assets/Rectangle.svg';
 import mountain from '../assets/mountain.svg';
 import sea from '../assets/sea.svg';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import getOreumNameList from 'test/getOreumNameList';
 
 const RecommendationForm = () => {
 	const [selectedLocation, setSelectedLocation] = useState('');
 	const [selectedDistance, setSelectedDistance] = useState('');
-	const [selectedWeather, setSelectedWeather] = useState([]);
-	const [selectedActivity, setSelectedActivity] = useState([]);
+	const [selectedWeather, setSelectedWeather] = useState('');
+	const [geolocation, setGeolocation] = useState({});
+
+	const [isLoading, setIsLoading] = useState(null);
+	const inputRef = useRef(null);
 	const handleClickLocation = (location) => {
 		setSelectedLocation(location);
 	};
 	const handleDistance = (distance) => {
 		setSelectedDistance(distance);
 	};
-
-	// 날씨 버튼 클릭 핸들러
 	const handleClickWeather = (weather) => {
-		const isAlreadySelected = selectedWeather.includes(weather);
-		if (isAlreadySelected) {
-			setSelectedWeather(selectedWeather.filter((w) => w !== weather));
-		} else {
-			setSelectedWeather([...selectedWeather, weather]);
-		}
+		setSelectedWeather(weather);
 	};
 
-	// 활동 버튼 클릭 핸들러
-	const handleClickActivity = (activity) => {
-		const isAlreadySelected = selectedActivity.includes(activity);
-		if (isAlreadySelected) {
-			setSelectedActivity(selectedActivity.filter((a) => a !== activity));
-		} else {
-			setSelectedActivity([...selectedActivity, activity]);
-		}
+	const handleSubmit = async () => {
+		let totalStirng = '';
+		const lifeMoto = `나의 인생모토는 ${inputRef.current.value}야`;
+		const location = `나는  ${selectedLocation}에 갈꺼고`;
+		const distance = `내 위치좌표는${geolocation.lat},${geolocation.lng}이고 오름위치는${selectedDistance}면 해.`;
+		const weather = `내 성격은 ${selectedWeather}이야`;
+		totalString = totalString + lifeMoto + location + distance + weather;
+		const prompt = `${totalStirng} 이러한 내용들을 바탕으로 내가 줄 제주 오름 리스트들 중에서 나에게 어울릴만한 오름을 추천해줘. 이 문장이 어색할수도 있는데 그건 
+		사용자로부터 동적으로 입력받기 떄문이야. 현재 계절을 고려했을 때 풍경을 고려하거나,
+		사람들의 감상평, 내 인생모토, 오름 근처에서 할 만한 것 등 여러가지 요인들을 고려해서 추천이유를 창의적이게 들어주면 좋을 것 같아.
+		이거는 앱 사용자에게 개인 성향에 맞춰 오름이나 바다를 추천해주는 서비스야. 우선 오름데이터를 줄테니까 여기 한정에서만 오름을 추천해주면 돼. 바다를 여행장소로 원하는 입력값일 경우
+		적당한 곳을 너가 추천해주면돼 
+		오름 데이터는 다음과 같아 ${getOreumNameList()} `;
+		setIsLoading(true);
+		const response = await summarizeReview(prompt);
+		isSetLoading(false);
 	};
+	// 날씨 버튼 클릭 핸들러
+
+	useEffect(() => {
+		// 사용자 좌표 얻어오기 & Map생성
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition((position) => {
+				console.log('position', position);
+				const lat = position.coords.latitude;
+				const lng = position.coords.longitude;
+				setGeolocation({ lat, lng });
+			});
+		}
+	});
+
 	return (
 		<main className='flex flex-col items-center mx-6 bg-white'>
 			<img src={Rectangle} className='mt-12' />
@@ -58,7 +78,7 @@ const RecommendationForm = () => {
 			<hr />
 			<div className='mb-20 flex flex-col gap-[3.125rem] mt-12 text-center'>
 				<div>
-					<h3 className='text-xl font-bold '>위치</h3>
+					<h3 className='text-xl font-bold '>선호지역</h3>
 					<div className='mt-1'>
 						<div className='my-3 flex items-center justify-center font-bold text-[#525463]'>
 							<p>나는 이곳을 가고싶어요</p>
@@ -96,80 +116,49 @@ const RecommendationForm = () => {
 					</div>
 				</div>
 				<div>
-					<h3 className='text-xl font-bold'>날씨</h3>
+					<h3 className='text-xl font-bold'>경험</h3>
 					<div>
-						<p className='my-3 font-bold text-[#525463]'>이런 날씨는 피하고 싶어요</p>
+						<p className='my-3 font-bold text-[#525463]'>나는 이런 사람이에요</p>
 						<div className='flex flex-wrap justify-center gap-2 '>
 							<TagButton
-								label='바람 많은'
+								label='도전적인 모험가 😎'
 								onClick={() => handleClickWeather('cloud')}
-								active={selectedWeather.includes('cloud')}
+								active={selectedWeather === 'cloud'}
 							/>
 							<TagButton
-								label='비가 내림'
+								label='탐구하는 학자 📚'
 								onClick={() => handleClickWeather('rainy')}
-								active={selectedWeather.includes('rainy')}
+								active={selectedWeather === 'rainy'}
 							/>
 							<TagButton
-								label='구름 낀'
+								label='탐미주의 예술가 🎨'
 								onClick={() => handleClickWeather('dark')}
-								active={selectedWeather.includes('dark')}
+								active={selectedWeather === 'dark'}
 							/>
 							<TagButton
-								label='추운 날씨'
+								label='피곤한 사회인 🫠'
 								onClick={() => handleClickWeather('cold')}
-								active={selectedWeather.includes('cold')}
+								active={selectedWeather === 'cold'}
 							/>
 							<TagButton
-								label='더운 날씨'
+								label='기록하는 사진가 📸'
 								onClick={() => handleClickWeather('hot')}
-								active={selectedWeather.includes('hot')}
+								active={selectedWeather === 'hot'}
 							/>
 						</div>
 					</div>
-				</div>
-				<div>
-					<h3 className='text-xl font-bold'>활동</h3>
-					<div>
-						<p className='my-3 font-bold text-[#525463]'>이런 활동을 하고 싶어요</p>
-						<div className='flex flex-wrap justify-center gap-2 '>
-							<TagButton
-								label='휴식'
-								onClick={() => handleClickActivity('휴식')}
-								active={selectedActivity.includes('휴식')}
-							/>
-							<TagButton
-								label='관람'
-								onClick={() => handleClickActivity('관람')}
-								active={selectedActivity.includes('관람')}
-							/>
-							<TagButton
-								label='사진찍기'
-								onClick={() => handleClickActivity('사진찍기')}
-								active={selectedActivity.includes('사진찍기')}
-							/>
-							<TagButton
-								label='꽃구경'
-								onClick={() => handleClickActivity('꽃구경')}
-								active={selectedActivity.includes('꽃구경')}
-							/>
-							<TagButton
-								label='런닝코스'
-								onClick={() => handleClickActivity('런닝코스')}
-								active={selectedActivity.includes('런닝코스')}
-							/>
-							<TagButton
-								label='워케이션'
-								onClick={() => handleClickActivity('워케이션')}
-								active={selectedActivity.includes('워케이션')}
-							/>
-						</div>
+					<div className='mt-6'>
+						<p className='my-3 font-bold text-[#525463]'>나는 이런 인생모토를 갖고 있어요</p>
+						<Input ref={inputRef} className='w-full ' />
 					</div>
 				</div>
 			</div>
 			<section className='flex gap-2 mb-12 '>
 				<Link to='/'>
-					<button className='flex flex-col items-center justify-center h-13 px-6 py-3.5 text-white bg-green rounded-md'>
+					<button
+						onClick={handleSubmit}
+						className='flex flex-col items-center justify-center h-13 px-6 py-3.5 text-white bg-green rounded-md'
+					>
 						추천해주세요, 흑꿀꿀!
 					</button>
 				</Link>
@@ -182,5 +171,30 @@ const RecommendationForm = () => {
 		</main>
 	);
 };
+
+const Input = styled.input`
+	display: flex;
+	padding: 0.5625rem 1rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.625rem;
+	flex: 1 0 0;
+	align-self: stretch;
+	border-radius: 0.5rem;
+	border: 1px solid #e1e1e8;
+	background: #fff;
+	color: #858899;
+	font-feature-settings:
+		'clig' off,
+		'liga' off;
+	/* KOR/paragraph */
+	font-family: Pretendard;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.375rem; /* 157.143% */
+	letter-spacing: -0.00625rem;
+`;
 
 export default RecommendationForm;

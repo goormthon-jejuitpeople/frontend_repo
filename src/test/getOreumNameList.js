@@ -1,4 +1,5 @@
-import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
+// import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
+import Jeju_Oreum_Desc from './Juju_Oreum_Desc.json';
 
 function getOreumNameList() {
 	const oreum_datas = Jeju_Oreum_Desc.resultSummary;

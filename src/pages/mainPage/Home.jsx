@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import Selector from '@components/TimeDropdown';
 import MainModal from '@components/MainModal';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
+
 // import SunnyImg from '../../assets/icon_sunny.png';
 import CloudImg from '../../assets/cloud.png';
 import { Link } from 'react-router-dom';
@@ -18,7 +19,7 @@ function objectToQueryString(obj) {
 
 const { resultSummary } = Jeju_Oreum_Desc;
 const Home = () => {
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [oruemData, setOreumData] = useState({});
@@ -202,6 +203,8 @@ const Home = () => {
 		</div>
 	);
 };
+
+export default Home;
 
 const Toggle = styled.div`
 	z-index: 100;
@@ -392,5 +395,3 @@ const DetailButton = styled(Link)`
 	color: white;
 	cursor: pointer;
 `;
-
-export default Home;

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
 
-const AIResult = () => {
+const DetailOreum = () => {
 	const { detailId } = useParams();
 	console.log('page _id, detailId');
 	const [searchParams] = useSearchParams();
@@ -147,4 +147,4 @@ font-weight: 500;
 line-height: 1.5rem; /* 150% */
 letter-spacing: -0.00625rem;
 `;
-export default AIResult;
+export default DetailOreum;

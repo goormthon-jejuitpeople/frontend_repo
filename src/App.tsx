@@ -1,3 +1,4 @@
+import DetailOreum from '@pages/DetailOreum';
 import Home from '@pages/mainPage/Home';
 import { Route, Routes } from 'react-router-dom';
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Home />} />
+			<Route path='/detail' element={<DetailOreum />} />
 			{/* <Route path='/home' element={<Home />} /> */}
 		</Routes>
 	);

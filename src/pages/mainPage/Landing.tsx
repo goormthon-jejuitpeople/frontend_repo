@@ -10,7 +10,7 @@ const Landing = () => {
 		>
 			{/* <NearbyStoreMap searchKeyword={'오름'} /> */}
 			<NearbyStoreMap />
-			<ReviewSummaryButton />
+			{/* <ReviewSummaryButton /> */}
 		</div>
 	);
 };

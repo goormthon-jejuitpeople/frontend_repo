@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import Jeju_Oreum from '../test/Jeju_Oreum.json';
 import Jeju_Oreum_Desc from '../test/Juju_Oreum_Desc.json';
 
@@ -100,6 +100,8 @@ const oruem_data = Jeju_Oreum_Desc.data;
 
 // console.log(oruem_data);
 const NearbyStoreMap = () => {
+	const [isOpen, setIsOpen] = useState(false);
+	const [oruemData, setOreumData] = useState({});
 	useEffect(() => {
 		// 사용자 좌표 얻어오기 & Map생성
 		if (navigator.geolocation) {
@@ -112,7 +114,7 @@ const NearbyStoreMap = () => {
 					const userLocation = new kakao.maps.LatLng(lat, lng);
 					const options = {
 						center: userLocation,
-						level: 3, // 확대수준
+						level: 10, // 확대수준
 					};
 					const map = new kakao.maps.Map(container, options);
 					// 내 위치 원으로 표시
@@ -152,6 +154,10 @@ const NearbyStoreMap = () => {
 						kakao.maps.event.addListener(marker, 'click', function () {
 							// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
 							infowindow.open(map, marker);
+							// modalOpen();
+							setIsOpen(true);
+
+							setOreumData(place);
 						});
 					}
 				},
@@ -170,9 +176,38 @@ const NearbyStoreMap = () => {
 				id='map'
 				style={{
 					width: '100%',
-					height: '400px',
+					height: '100vw',
+					zIndex: 0,
 				}}
 			></div>
+			{isOpen && oruemData && (
+				<div
+					style={{
+						width: '100%',
+						height: '331px',
+						zIndex: '100',
+						backgroundColor: 'pink',
+						position: 'absolute',
+						bottom: '0%',
+						left: '50%',
+						transform: 'translate(-50%, 0)',
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					<div>---</div>
+					<div>적합한 장소를 찾았어요!</div>
+					<div>{oruemData.오름명}</div>
+					<div>날씨정보...</div>
+					<img
+						style={{ width: '100%', height: '136px' }}
+						src='https://cdn.san.chosun.com/news/photo/202205/15785_66304_337.jpg'
+					></img>
+					<button>메인으로</button>
+					<button>상세정보보기</button>
+				</div>
+			)}
 		</>
 	);
 };

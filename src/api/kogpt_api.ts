@@ -1,13 +1,12 @@
 export async function summarizeReview(reviewText: string) {
 	const requestBody = {
 		prompt: reviewText,
-		max_tokens: 50,
+		max_tokens: 200,
 		temperature: 0.5,
 		top_p: 0.5,
 	};
 	try {
 		const response = await fetch('/v1/inference/kogpt/generation', {
-			//mode: 'cors',
 			method: 'POST',
 			headers: {
 				credentials: 'include',
@@ -18,7 +17,7 @@ export async function summarizeReview(reviewText: string) {
 		});
 
 		const summary_data = await response.json();
-		return summary_data;
+		return summary_data.generations[0].text;
 	} catch (error) {
 		console.error('Error calling the KoGPT API:', error);
 	}

@@ -6,7 +6,6 @@ module.exports = function (app) {
 		createProxyMiddleware({
 			target: 'https://api.kakaobrain.com',
 			changeOrigin: true,
-			//pathRewrite: { '^/api': '/v1/inference/kogpt/generation' },
 		}),
 	);
 };

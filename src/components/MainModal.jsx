@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import locationImg from '../assets/LocationIcon.svg';
 import pig from '../assets/pig.svg';
+import { Link } from 'react-router-dom';
 
 const MainModal = ({ currentLocation }) => {
 	const { region_1depth_name, region_2depth_name, region_3depth_name } = currentLocation;
@@ -19,7 +20,9 @@ const MainModal = ({ currentLocation }) => {
 				<span>습도 15%</span>
 			</div>
 			<div style={{ position: 'relative' }}>
-				<Button>산/바다 추천받기</Button>
+				<Link to='/form'>
+					<Button>산/바다 추천받기</Button>
+				</Link>
 				<img src={pig} style={{ width: '70px', height: '69px', position: 'absolute', top: '-40px', right: '0' }} />
 			</div>
 		</Modal>
@@ -41,7 +44,7 @@ const Modal = styled.div`
 	box-sizing: border-box;
 
 	width: 100%;
-	z-index: 50;
+	zindex: 100;
 	border-radius: 20px 20px 0px 0px;
 	background: #fff;
 	box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);

@@ -4,6 +4,7 @@ import Home from '@pages/mainPage/Home';
 import Loading from '@pages/Loading';
 
 import { Route, Routes } from 'react-router-dom';
+import AIResult from '@pages/DetailOreum';
 const App = () => {
 	console.log(process.env.REACT_APP_OPEN_AI_KEY);
 
@@ -11,6 +12,7 @@ const App = () => {
 		<Routes>
 			<Route path='/' element={<Home />} />
 			<Route path='/detail/:id' element={<DetailOreum />} />
+			<Route path='/recommendation' element={<AIResult />} />
 			<Route path='/form' element={<RecommendationForm />} />
 			<Route path='/loading' element={<Loading />} />
 		</Routes>

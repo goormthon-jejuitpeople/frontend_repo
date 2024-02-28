@@ -4,6 +4,8 @@ import MainModal from '@components/MainModal';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
+// import SunnyImg from '../../assets/icon_sunny.png';
+import CloudImg from '../../assets/cloud.png';
 
 const oruem_data = Jeju_Oreum_Desc.data;
 
@@ -88,10 +90,17 @@ const Home = () => {
 					// 지도에 마커를 표시하고 클릭시 infowindow를 표시하는 함수입니다
 					function displayMarker(place) {
 						console.log('place', place);
-						// 마커를 생성하고 지도에 표시합니다
+
+						var imageSrc = CloudImg, // 마커이미지의 주소입니다
+							imageSize = new kakao.maps.Size(40, 56), // 마커이미지의 크기입니다
+							imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+						// 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+						var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 						const marker = new kakao.maps.Marker({
 							map: map,
 							position: new kakao.maps.LatLng(place.위도, place.경도),
+							image: markerImage, // 마커이미지 설정
 						});
 
 						const infowindow = new kakao.maps.InfoWindow({

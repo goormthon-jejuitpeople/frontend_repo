@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 const DetailOreum = () => {
 	const { detailId } = useParams();

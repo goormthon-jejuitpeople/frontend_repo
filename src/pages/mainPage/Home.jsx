@@ -9,8 +9,13 @@ import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
 import CloudImg from '../../assets/cloud.png';
 import { Link } from 'react-router-dom';
 
-console.log('Jeju_Oreum_Desc', Jeju_Oreum_Desc);
-// const oruem_data = Jeju_Oreum_Desc.resultSummary;
+function objectToQueryString(obj) {
+	const queryString = Object.entries(obj)
+		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+		.join('&');
+	return queryString;
+}
+
 const { resultSummary } = Jeju_Oreum_Desc;
 const Home = () => {
 	const navigate = useNavigate();
@@ -179,7 +184,9 @@ const Home = () => {
 					<WeatherDiv>기온 7'C 습도 10</WeatherDiv>
 					<Desc>{oruemData.explan}</Desc>
 					<div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '20px' }}>
-						<DetailButton to={`/detail/:${oruemData.oleumEname}/`}>상세정보보기</DetailButton>
+						<DetailButton to={`/detail/:${oruemData.oleumEname}?${objectToQueryString(oruemData)}`}>
+							상세정보보기
+						</DetailButton>
 						<MainButton
 							onClick={() => {
 								setIsOpen(false);

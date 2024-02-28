@@ -1,4 +1,5 @@
 import DetailOreum from '@pages/DetailOreum';
+import RecommendationForm from '@pages/RecommendationForm';
 import Home from '@pages/mainPage/Home';
 import Loading from '@pages/Loading';
 
@@ -9,10 +10,9 @@ const App = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Home />} />
-			<Route path='/detail' element={<DetailOreum />} />
+			<Route path='/detail/:id' element={<DetailOreum />} />
+			<Route path='/form' element={<RecommendationForm />} />
 			<Route path='/loading' element={<Loading />} />
-
-			{/* <Route path='/home' element={<Home />} /> */}
 		</Routes>
 	);
 };

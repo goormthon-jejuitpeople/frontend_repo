@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react';
 import Selector from '@components/TimeDropdown';
 import MainModal from '@components/MainModal';
@@ -8,8 +9,14 @@ import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
 import CloudImg from '../../assets/cloud.png';
 import { Link } from 'react-router-dom';
 
-const oruem_data = Jeju_Oreum_Desc.data;
+function objectToQueryString(obj) {
+	const queryString = Object.entries(obj)
+		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+		.join('&');
+	return queryString;
+}
 
+const { resultSummary } = Jeju_Oreum_Desc;
 const Home = () => {
 	const navigate = useNavigate();
 
@@ -65,7 +72,6 @@ const Home = () => {
 						if (status === kakao.maps.services.Status.OK) {
 							// var infoDiv = document.getElementById('centerAddr');
 
-							console.log('result', result);
 							setCurrentLocation(result[0]);
 
 							// for (var i = 0; i < result.length; i++) {
@@ -80,9 +86,9 @@ const Home = () => {
 						// let location = infoDiv.innerHTML;
 					}
 
-					oruem_data.forEach((oruem) => {
+					resultSummary.forEach((oruem) => {
 						console.log(oruem);
-						console.log('oruem', oruem.위도);
+						console.log('oruem', oruem.x);
 
 						// 결과값으로 받은 위치를 마커로 표시합니다
 						displayMarker(oruem);
@@ -100,12 +106,12 @@ const Home = () => {
 						var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 						const marker = new kakao.maps.Marker({
 							map: map,
-							position: new kakao.maps.LatLng(place.위도, place.경도),
+							position: new kakao.maps.LatLng(place.y, place.x),
 							image: markerImage, // 마커이미지 설정
 						});
 
 						const infowindow = new kakao.maps.InfoWindow({
-							content: `<div style="padding:5px;font-size:12px;">${place.오름명}</div>`,
+							content: `<div style="padding:5px;font-size:12px;">${place.oleumKname}</div>`,
 						});
 
 						// 마커에 클릭이벤트를 등록합니다
@@ -114,7 +120,6 @@ const Home = () => {
 							// infowindow.open(map, marker);
 							// modalOpen();
 							setIsOpen(true);
-
 							setOreumData(place);
 						});
 					}
@@ -132,6 +137,9 @@ const Home = () => {
 		<div
 			style={{
 				position: 'relative',
+				height: '100vh',
+				overflow: 'hidden',
+				minHeight: '100%',
 			}}
 		>
 			<div
@@ -171,15 +179,14 @@ const Home = () => {
 						}}
 					></SlideDown>
 					<BlueDiv>🤩 꿀꿀, 적합한 장소를 찾았어요!</BlueDiv>
-					<img
-						style={{ width: '100%', height: '136px', borderRadius: '8px' }}
-						src='https://cdn.san.chosun.com/news/photo/202205/15785_66304_337.jpg'
-					></img>
-					<Title>{oruemData.오름명}</Title>
-					<WeatherDiv>기온 7’C 습도 10</WeatherDiv>
-					<Desc>테스트에서 작성해주신 이러이러한 부분을 반영하여, 저러저러한 이유로 이곳을 추천드려요.</Desc>
+					<img style={{ width: '100%', height: '136px', borderRadius: '8px' }} src={oruemData.imgPath}></img>
+					<Title>{oruemData.oleumKname}</Title>
+					<WeatherDiv>기온 7'C 습도 10</WeatherDiv>
+					<Desc>{oruemData.explan}</Desc>
 					<div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '20px' }}>
-						<DetailButton to={`/detail`}>상세정보보기</DetailButton>
+						<DetailButton to={`/detail/:${oruemData.oleumEname}?${objectToQueryString(oruemData)}`}>
+							상세정보보기
+						</DetailButton>
 						<MainButton
 							onClick={() => {
 								setIsOpen(false);

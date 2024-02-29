@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import Logo from '../assets/logo.png';
 
 const Landing = () => {
+	window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
 	return (
-		<Div>
-			<img src={Logo} />
-		</Div>
+		<>
+			<Div>
+				<img src={Logo} />
+			</Div>
+		</>
 	);
 };
 

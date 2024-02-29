@@ -22,7 +22,7 @@ const Loading = () => {
 export default Loading;
 
 const Container = styled.div`
-	height: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

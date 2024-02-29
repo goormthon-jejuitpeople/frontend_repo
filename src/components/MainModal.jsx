@@ -36,7 +36,7 @@ const Modal = styled.div`
 
 	display: flex;
 	width: 393px;
-	padding: 20px 32px 40px 32px;
+	padding: 20px 32px 10px 32px;
 	flex-direction: column;
 	gap: 5px;
 

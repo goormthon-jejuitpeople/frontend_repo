@@ -11,7 +11,6 @@ const Landing = () => {
 				<img src={Logo} />
 			</Div>
 		</>
-
 	);
 };
 

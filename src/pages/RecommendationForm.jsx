@@ -54,18 +54,19 @@ const RecommendationForm = () => {
 		const distance = `내 위치좌표는"${geolocation.lat},${geolocation.lng}"이고 오름위치는 "${selectedDistance}".`;
 		const weather = `내 성격은 "${selectedWeather}"이야`;
 		totalString += lifeMoto + location + distance + weather; // Correctly append strings using +=
-		const prompt = `
-		내 성향을 듣고 오름 추천해줘! 
-		@오름이름데이터: 성산일출봉, 금오름 
-		이 이름 데이터 중에서 다음에 말할 조건들에 부합하는 오름 딱 하나를 추천해줘. 
-		@성향:${totalString} 
-		오름 하나를 골랐다면 그 오름을 추천한 이유를 성향을 근거로 들어주라. 현재 계절, 사람들의 감상평, 내 인생 모토, 오름 근처에서 할 만한 것 등을 고려해서 추천해줘.
-		구체적인 예시로는, 당신은 활발한 운동을 좋아하기 때문에 높은 등반을 할 수 있는 성산일출봉을 추천드립니다 처럼 해주면 돼 
-		추천 이유는 300자로 제한할게. 결과는 {name: "오름이름", reason: "추천이유"} 형식으로 제공해줘.  "`;
+		// const prompt = `
+		// 내 성향을 듣고 오름 추천해줘! 오름은 제주도에 있는 높지 않은 산들을 말해.
+		// @오름이름데이터: 성산일출봉, 금오름
+		// 이 이름 데이터 중에서 다음에 말할 조건들에 부합하는 오름 딱 하나를 추천해줄래?? 반드시 매번 새롭게 내 질문에 대한 대답을 해줘야해!`;
+		// @성향:${totalString}
+		// 오름 하나를 골랐다면 그 오름을 추천한 이유를 성향을 근거로 들어주라. 현재 계절, 사람들의 감상평, 내 인생 모토, 오름 근처에서 할 만한 것 등을 고려해서 추천해줘.
+		// 구체적인 예시로는, 당신은 활발한 운동을 좋아하기 때문에 높은 등반을 할 수 있는 성산일출봉을 추천드립니다 처럼 해주면 돼
+		// 추천 이유는 300자로 제한할게. 결과는 {name: "오름이름", reason: "추천이유"} 형식으로 제공해줘.  "`;
+		const prompt = `1+1= 정답을 알려줘`;
 		setIsLoading(true);
 		console.log('prompt', prompt);
 		// Assuming summarizeReview is a function that takes the prompt and does something useful with it
-		const response = await summarizeReview(prompt, 0.5);
+		const response = await summarizeReview(prompt, 0);
 		console.log('response', response);
 		//response가 있을 때
 		setIsLoading(false);

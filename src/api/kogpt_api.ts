@@ -3,7 +3,7 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 		prompt: reviewText,
 		max_tokens: 100,
 		temperature: creativity,
-		top_p: 0.5,
+		top_p: 0,
 	};
 	try {
 		const response = await fetch('/v1/inference/kogpt/generation', {

@@ -50,7 +50,9 @@ const AIResult = () => {
 				</div>
 			</section>
 			<section className='flex justify-center gap-4 mt-16 align-center'>
-				<TryAgain>추천 한번 더</TryAgain>
+				<Link to='/form'>
+					<TryAgain>추천 한번 더</TryAgain>
+				</Link>
 				<Link to='/'>
 					<GoHome>홈으로</GoHome>
 				</Link>

@@ -238,7 +238,7 @@ const Home = () => {
 					setTimeout(function () {
 						console.log('Hello, World!');
 						setShowLanding(false);
-					}, 1200);
+					}, 900);
 				},
 				(error) => {
 					console.error('사용자 위치정보 가져오는데 실패했습니다', error);

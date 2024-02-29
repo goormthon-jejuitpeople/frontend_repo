@@ -1,72 +1,71 @@
 [
-    {
-        "dt_txt": "2024-02-28 18:00:00",
-        "weather": [
-            {
-                "icon": "10n",
-                "description": "light rain",
-                "main": "Rain",
-                "id": 500
-            }
-        ],
-        "main": {
-            "temp": 280.23,
-            "temp_min": 280.23,
-            "grnd_level": 986,
-            "temp_kf": -0.46,
-            "humidity": 88,
-            "pressure": 1024,
-            "sea_level": 1024,
-            "feels_like": 276.8,
-            "temp_max": 280.69
-        },
-        "id": 0
-    },
-    {
-
-        "dt_txt": "2024-02-28 00:00:00",
-        "weather": [
-            {
-                "icon": "10n",
-                "description": "moderate rain",
-                "main": "Rain",
-                "id": 501
-            }
-        ],
-        "main": {
-            "temp": 280.33,
-            "temp_min": 280.33,
-            "grnd_level": 984,
-            "temp_kf": -0.2,
-            "humidity": 89,
-            "pressure": 1023,
-            "sea_level": 1023,
-            "feels_like": 276.4,
-            "temp_max": 280.53
-        },
-        "id": 1
-    },
-    {
-        "dt_txt": "2024-02-28 20:00:00",
-        "weather": [
-            {
-                "icon": "10n",
-                "description": "light rain",
-                "main": "",
-                "id": 500
-            }
-        ],
-        "main": {
-            "temp": 280.23,
-            "temp_min": 280.23,
-            "grnd_level": 986,
-            "temp_kf": -0.46,
-            "humidity": 88,
-            "pressure": 1024,
-            "sea_level": 1024,
-            "feels_like": 276.8,
-            "temp_max": 280.69
-        },
-        "id": 2
-    }
+	{
+		"dt_txt": "2024-02-29 03:00:00",
+		"weather": [
+			{
+				"icon": "10n",
+				"description": "light rain",
+				"main": "Rain",
+				"id": 500
+			}
+		],
+		"main": {
+			"temp": 280.23,
+			"temp_min": 280.23,
+			"grnd_level": 986,
+			"temp_kf": -0.46,
+			"humidity": 88,
+			"pressure": 1024,
+			"sea_level": 1024,
+			"feels_like": 276.8,
+			"temp_max": 280.69
+		},
+		"id": 0
+	},
+	{
+		"dt_txt": "2024-02-29 02:00:00",
+		"weather": [
+			{
+				"icon": "10n",
+				"description": "moderate rain",
+				"main": "Rain",
+				"id": 501
+			}
+		],
+		"main": {
+			"temp": 280.33,
+			"temp_min": 280.33,
+			"grnd_level": 984,
+			"temp_kf": -0.2,
+			"humidity": 89,
+			"pressure": 1023,
+			"sea_level": 1023,
+			"feels_like": 276.4,
+			"temp_max": 280.53
+		},
+		"id": 1
+	},
+	{
+		"dt_txt": "2024-02-29 04:00:00",
+		"weather": [
+			{
+				"icon": "10n",
+				"description": "light rain",
+				"main": "",
+				"id": 500
+			}
+		],
+		"main": {
+			"temp": 280.23,
+			"temp_min": 280.23,
+			"grnd_level": 986,
+			"temp_kf": -0.46,
+			"humidity": 88,
+			"pressure": 1024,
+			"sea_level": 1024,
+			"feels_like": 276.8,
+			"temp_max": 280.69
+		},
+		"id": 2
+	}
 ]

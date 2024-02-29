@@ -10,8 +10,6 @@ import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
 
 const AIResult = () => {
-	console.log('왜');
-	const { detailId } = useParams();
 	const [searchParams] = useSearchParams();
 	const queryList = [...searchParams];
 	const oreumData = Object.fromEntries(queryList);
@@ -31,12 +29,7 @@ const AIResult = () => {
 					<p className='text-[#2B2D36] text-sm font-medium leading-6'>{oreumData.oleumAddr}</p>
 				</div>
 				<h1 className='my-4 text-3xl font-extrabold'>{oreumData.oleumKname}</h1>
-				<WeatherCard
-					weather='sunny'
-					detail='기온 7도 습도 13% '
-					recommendation='테스트에서 작성해주신 이러이러한 부분을 반영했어요.
-저러저러한 이유가 어쩌구 오름의 이러한 특징과 적합해 이곳을 추천드려요.'
-				/>
+				<WeatherCard weather='sunny' detail='기온 7도 습도 13% ' recommendation={oreumData.reason} />
 				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 특징</h2>
 				<div className='flex justify-around'>
 					<img src={Image} />

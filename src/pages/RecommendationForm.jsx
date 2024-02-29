@@ -3,14 +3,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import Rectangle from '../assets/Rectangle.svg';
 import mountain from '../assets/mountain.svg';
 import sea from '../assets/sea.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 // import getOreumNameList from 'test/getOreumNameList';
 import getOreumNameList from '../test/getOreumNameList';
 import { summarizeReview } from '@api/kogpt_api';
 import Loading from './Loading';
 
+function objectToQueryString(obj) {
+	const queryString = Object.entries(obj)
+		.map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+		.join('&');
+	return queryString;
+}
 const RecommendationForm = () => {
+	const navigate = useNavigate();
 	const [selectedLocation, setSelectedLocation] = useState('');
 	const [selectedDistance, setSelectedDistance] = useState('');
 	const [selectedWeather, setSelectedWeather] = useState('');
@@ -28,26 +35,41 @@ const RecommendationForm = () => {
 		setSelectedWeather(weather);
 	};
 
+	const mockData = {
+		oleumKname: '알오름',
+		oleumEname: 'al',
+		oleumAddr: '서귀포시 성산읍 시흥리',
+		oleumAltitu: 51,
+		x: '126.885873550364',
+		y: '33.4803782361653',
+		explan: '비고 51m의 원추형 화구를 지닌 화산체이다.',
+		imgPath: 'https://gis.jeju.go.kr/images/oleum/al.png',
+		reason:
+			'알오름은 도전적인 모험을 즐기는 분에게 안성맞춤입니다. 비교적 쉬운 등반 경로와 짧은 소요 시간에도 불구하고, 정상에서 바라보는 제주도의 파노라마는 압도적입니다. 계절에 관계없이 다채로운 자연 경관을 선사하며, 근처에 다양한 액티비티와 맛집이 있어 여행의 즐거움을 더합니다.',
+	};
 	const handleSubmit = async () => {
 		let totalString = ''; // Corrected variable name
-		const lifeMoto = `나의 인생모토는 ${inputRef.current.value}야`;
-		const location = `나는 ${selectedLocation}에 갈꺼고`;
-		const distance = `내 위치좌표는${geolocation.lat},${geolocation.lng}이고 오름위치는${selectedDistance}면 해.`;
-		const weather = `내 성격은 ${selectedWeather}이야`;
+		const lifeMoto = `나의 여행모토는 "${inputRef.current.value}"야`;
+		const location = `나는 "${selectedLocation}"에 갈꺼고`;
+		const distance = `내 위치좌표는"${geolocation.lat},${geolocation.lng}"이고 오름위치는 "${selectedDistance}".`;
+		const weather = `내 성격은 "${selectedWeather}"이야`;
 		totalString += lifeMoto + location + distance + weather; // Correctly append strings using +=
-		const prompt = `${totalString} 이러한 내용들을 바탕으로 내가 줄 제주 오름 리스트들 중에서 나에게 어울릴만한 오름을 추천해줘. 이 문장이 어색할수도 있는데 그건 
-    사용자로부터 동적으로 입력받기 떄문이야. 현재 계절을 고려했을 때 풍경을 고려하거나,
-    사람들의 감상평, 내 인생모토, 오름 근처에서 할 만한 것 등 여러가지 요인들을 고려해서 추천이유를 창의적이게 들어주면 좋을 것 같아.
-    이거는 앱 사용자에게 개인 성향에 맞춰 오름이나 바다를 추천해주는 서비스야. 우선 오름데이터를 줄테니까 여기 한정에서만 오름을 추천해주면 돼. 바다를 여행장소로 원하는 입력값일 경우
-    적당한 곳을 너가 추천해주면돼 
-    오름 데이터는 다음과 같아 ${getOreumNameList()}`;
+		const prompt = `
+		내 성향을 듣고 오름 추천해줘! 
+		@오름이름데이터: 성산일출봉, 금오름 
+		이 이름 데이터 중에서 다음에 말할 조건들에 부합하는 오름 딱 하나를 추천해줘. 
+		@성향:${totalString} 
+		오름 하나를 골랐다면 그 오름을 추천한 이유를 성향을 근거로 들어주라. 현재 계절, 사람들의 감상평, 내 인생 모토, 오름 근처에서 할 만한 것 등을 고려해서 추천해줘.
+		구체적인 예시로는, 당신은 활발한 운동을 좋아하기 때문에 높은 등반을 할 수 있는 성산일출봉을 추천드립니다 처럼 해주면 돼 
+		추천 이유는 300자로 제한할게. 결과는 {name: "오름이름", reason: "추천이유"} 형식으로 제공해줘.  "`;
 		setIsLoading(true);
+		console.log('prompt', prompt);
 		// Assuming summarizeReview is a function that takes the prompt and does something useful with it
-		const response = await summarizeReview(prompt);
+		const response = await summarizeReview(prompt, 0.5);
+		console.log('response', response);
 		//response가 있을 때
 		setIsLoading(false);
-
-		console.log(response);
+		navigate(`/recommendation?${objectToQueryString(mockData)}`);
 	};
 
 	useEffect(() => {
@@ -60,7 +82,7 @@ const RecommendationForm = () => {
 				setGeolocation({ lat, lng });
 			});
 		}
-	});
+	}, []);
 
 	return (
 		<>
@@ -112,13 +134,13 @@ const RecommendationForm = () => {
 								<div className='flex justify-center gap-2'>
 									<TagButton
 										label='차량 30분이하'
-										onClick={() => handleDistance('close')}
-										active={selectedDistance === 'close'}
+										onClick={() => handleDistance('가까웠음')}
+										active={selectedDistance === '가까웠음'}
 									/>
 									<TagButton
 										label='차량 30분이상'
-										onClick={() => handleDistance('far')}
-										active={selectedDistance === 'far'}
+										onClick={() => handleDistance('멀어도상관없음')}
+										active={selectedDistance === '멀어도상관없음'}
 									/>
 								</div>
 							</div>
@@ -130,33 +152,33 @@ const RecommendationForm = () => {
 								<div className='flex flex-wrap justify-center gap-2 '>
 									<TagButton
 										label='도전적인 모험가 😎'
-										onClick={() => handleClickWeather('cloud')}
-										active={selectedWeather === 'cloud'}
+										onClick={() => handleClickWeather('도전적인 모험가')}
+										active={selectedWeather === '도전적인 모험가'}
 									/>
 									<TagButton
 										label='탐구하는 학자 📚'
-										onClick={() => handleClickWeather('rainy')}
-										active={selectedWeather === 'rainy'}
+										onClick={() => handleClickWeather('탐구하는 학자')}
+										active={selectedWeather === '탐구하는 학자'}
 									/>
 									<TagButton
 										label='탐미주의 예술가 🎨'
-										onClick={() => handleClickWeather('dark')}
-										active={selectedWeather === 'dark'}
+										onClick={() => handleClickWeather('탐미주의 예술가')}
+										active={selectedWeather === '탐미주의 예술가'}
 									/>
 									<TagButton
 										label='피곤한 사회인 🫠'
-										onClick={() => handleClickWeather('cold')}
-										active={selectedWeather === 'cold'}
+										onClick={() => handleClickWeather('피곤한 사회인')}
+										active={selectedWeather === '피곤한 사회인'}
 									/>
 									<TagButton
 										label='기록하는 사진가 📸'
-										onClick={() => handleClickWeather('hot')}
-										active={selectedWeather === 'hot'}
+										onClick={() => handleClickWeather('기록하는 사진가')}
+										active={selectedWeather === '기록하는 사진가'}
 									/>
 								</div>
 							</div>
 							<div className='mt-6'>
-								<p className='my-3 font-bold text-[#525463]'>나는 이런 인생모토를 갖고 있어요</p>
+								<p className='my-3 font-bold text-[#525463]'>나는 이런 여행모토를 갖고 있어요</p>
 								<Input ref={inputRef} className='w-full ' />
 							</div>
 						</div>

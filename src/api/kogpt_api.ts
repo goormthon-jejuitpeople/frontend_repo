@@ -1,8 +1,8 @@
-export async function summarizeReview(reviewText: string) {
+export async function summarizeReview(reviewText: string, creativity: number) {
 	const requestBody = {
 		prompt: reviewText,
-		max_tokens: 150,
-		temperature: 0.5,
+		max_tokens: 100,
+		temperature: creativity,
 		top_p: 0.5,
 	};
 	try {
@@ -17,6 +17,7 @@ export async function summarizeReview(reviewText: string) {
 		});
 
 		const summary_data = await response.json();
+		console.log(summary_data.id);
 		return summary_data.generations[0].text;
 	} catch (error) {
 		console.error('Error calling the KoGPT API:', error);

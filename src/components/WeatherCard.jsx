@@ -21,33 +21,16 @@ const WeatherCard = ({ weather, detail, recommendation }) => {
 					<Paragraph>추천하는 이유</Paragraph>
 					<div>
 						<img src={Pig} />
-						<Text className='text-[#2B2D36]'>{recommendation}</Text>
+						<Text className='my-2 text-[#2B2D36]'>{recommendation}</Text>
 					</div>
 				</div>
 			) : null}
 		</section>
 	);
 };
-const Rec = styled.div`
-	display: flex;
-	padding: 0.5625rem 1rem;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 0.625rem;
-	align-self: stretch;
-	border-radius: 0.5rem;
-	border: 1px solid #ffe4ca;
-
-	background: #fff9f6;
-`;
 
 const Text = styled.div`
-	color: var(--light-gray-gray-900, #2b2d36);
-	font-feature-settings:
-		'clig' off,
-		'liga' off;
-	/* KOR/paragraph */
+	color: #2b2d36;
 	font-family: Pretendard;
 	font-size: 0.875rem;
 	font-style: normal;
@@ -57,10 +40,6 @@ const Text = styled.div`
 `;
 const Paragraph = styled.p`
 	color: #ff7c43;
-
-	font-feature-settings:
-		'clig' off,
-		'liga' off;
 	font-family: Pretendard;
 	font-size: 0.875rem;
 	font-style: normal;

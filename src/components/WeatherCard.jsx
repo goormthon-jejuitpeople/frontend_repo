@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
-import Pig from '../assets/Pig.png';
+import Pig from '../assets/pig.png';
 const weatherIcon = { sunny: ['🌤️', '맑음'], rainy: ['🌧️', '비 옴'], cloudy: ['☁️', '흐림'] };
 const WeatherCard = ({ weather, detail, recommendation }) => {
 	return (

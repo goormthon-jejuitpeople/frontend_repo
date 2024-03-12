@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { mockReviews } from '@mock/mockReviewText';
 import { summarizeReview } from '@api/kogpt_api';
 import styled from 'styled-components';
-import { BeatLoader, ClipLoader } from 'react-spinners';
+import { BeatLoader } from 'react-spinners';
 const override = {
 	display: 'block',
 	margin: '0 auto',

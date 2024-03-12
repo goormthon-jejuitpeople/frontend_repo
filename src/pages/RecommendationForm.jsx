@@ -6,7 +6,6 @@ import sea from '../assets/sea.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 // import getOreumNameList from 'test/getOreumNameList';
-import getOreumNameList from '../test/getOreumNameList';
 import { summarizeReview } from '@api/kogpt_api';
 import Loading from './Loading';
 

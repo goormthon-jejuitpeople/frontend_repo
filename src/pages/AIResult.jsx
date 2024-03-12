@@ -1,4 +1,4 @@
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import LocationIcon from '../assets/LocationIcon.svg';
 import WeatherCard from '@components/WeatherCard';

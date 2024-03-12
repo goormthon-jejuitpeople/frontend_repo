@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import locationImg from '../assets/LocationIcon.svg';
 import pig from '../assets/pig.svg';

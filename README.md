@@ -32,9 +32,9 @@
 
 ## 프로젝트 구성화면
 
-| 날씨 정보 조회 | 오름 상세정보 확인| 김미경| 김혜빈|
+| 날씨 정보 조회 | 오름 상세정보 확인| 생성형 AI 맞춤 오름 추천| AI 기반 리뷰 요약|
 |-----------|----------------------------------- | --------------------- | ------------------------------- |
-|<img width="349" alt="image" src="https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/73c8fe06-3dc1-4151-af4e-6142b5c91f98">| ![Alt text](%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A6-1.gif)|![Alt text](%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A6-1.gif)| ![Alt text](%E1%84%8B%E1%85%A9%E1%84%85%E1%85%B3%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A6-1.gif)|
+|<img width="349" alt="image" src="https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/73c8fe06-3dc1-4151-af4e-6142b5c91f98">|![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)|![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)| ![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)|
 
 <br/>
 <br/>

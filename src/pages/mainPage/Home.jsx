@@ -38,9 +38,6 @@ const Home = () => {
 	const [isSelectMountain, setIsSelectMountain] = useState(true);
 	const [isSelectSea, setIsSelectSea] = useState(false);
 
-	const [currentWeather, setCurrentWeather] = useState('');
-	const [imgSrc, setImgSrc] = useState();
-
 	const [showLanding, setShowLanding] = useState(true);
 
 	useEffect(() => {

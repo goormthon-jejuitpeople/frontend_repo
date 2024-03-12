@@ -33,6 +33,7 @@ module.exports = {
 		'react/jsx-props-no-spreading': 'off',
 		'@typescript-eslint/explicit-function-return-type': 'off', //typeScript에서 함수의 반환 유형을 명시적으로 지정하지 않도록 허용
 		'no-undef': 'off',
-		'@typescript-eslint/no-var-requires': '0',
+		'no-unused-vars': 'off',
+		'@typescript-eslint/no-unused-vars': 'off',
 	},
 };

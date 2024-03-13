@@ -6,7 +6,7 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 		top_p: 0,
 	};
 	try {
-		const response = await fetch('/v1/inference/kogpt/generation', {
+		const response = await fetch('https://api.kakaobrain.com/v1/inference/kogpt/generation', {
 			method: 'POST',
 			headers: {
 				// Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,

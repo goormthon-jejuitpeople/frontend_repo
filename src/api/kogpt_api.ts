@@ -5,8 +5,12 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 		temperature: creativity,
 		top_p: 0,
 	};
+
+	const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+	const URL = `${PROXY}/v1/inference/kogpt/generation`;
+
 	try {
-		const response = await fetch('https://api.kakaobrain.com/v1/inference/kogpt/generation', {
+		const response = await fetch(URL, {
 			method: 'POST',
 			headers: {
 				// Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,

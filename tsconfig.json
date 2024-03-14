@@ -16,6 +16,6 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": ["src", "src/custom.d.ts"],
+	"include": ["src", "src/custom.d.ts", "openai-test.cjs"],
 	"extends": "./tsconfig.paths.json"
 }

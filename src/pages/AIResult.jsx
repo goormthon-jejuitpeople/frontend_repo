@@ -8,11 +8,22 @@ import Reivew from '@components/Reivew';
 import styled from 'styled-components';
 import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
+import { kMaxLength } from 'buffer';
+import Juju_Oreum_Desc from '../test/Juju_Oreum_Desc.json';
+import { useEffect, useState } from 'react';
 
 const AIResult = () => {
 	const [searchParams] = useSearchParams();
 	const queryList = [...searchParams];
-	const oreumData = Object.fromEntries(queryList);
+	const { name, reason } = JSON.parse(queryList[0][0]);
+	const { resultSummary } = Juju_Oreum_Desc;
+	const [oreumData, setOreumData] = useState({});
+
+	useEffect(() => {
+		const foundOreum = resultSummary.find((el) => el.oleumKname === name);
+		setOreumData(foundOreum);
+	}, []);
+
 	return (
 		<main className='w-full pb-12'>
 			<header className='bg-[#FFF9F6] flex flex-col items-center justify-center pt-6 pb-4'>
@@ -24,11 +35,11 @@ const AIResult = () => {
 				</div>
 			</header>
 			<section className='mx-6'>
-				<div className='w-3/5 flex items-center gap-2.5 py-1 px-2.5 rounded-full border border-orange bg-white text-sm font-medium leading-6 '>
+				{/* <div className='w-3/5 flex items-center gap-2.5 py-1 px-2.5 rounded-full border border-orange bg-white text-sm font-medium leading-6 '>
 					<img src={LocationIcon} />
 					<p className='text-[#2B2D36] text-sm font-medium leading-6'>{oreumData.oleumAddr}</p>
-				</div>
-				<h1 className='my-4 text-3xl font-extrabold'>{oreumData.oleumKname}</h1>
+				</div> */}
+				<h1 className='my-4 text-3xl font-extrabold'>{name}</h1>
 				<WeatherCard weather='sunny' detail='기온 7도 습도 13% ' recommendation={oreumData.reason} />
 				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 특징</h2>
 				<div className='flex justify-around'>
@@ -37,7 +48,7 @@ const AIResult = () => {
 				</div>
 				<PlaceFeature className='flex flex-col mt-4 mb-6'>
 					<PlaceIntro>장소에 대한 한 줄 소개</PlaceIntro>
-					<PlaceExplan>{oreumData.explan}</PlaceExplan>
+					<PlaceExplan>{reason}</PlaceExplan>
 				</PlaceFeature>
 				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 리뷰</h2>
 				<div>

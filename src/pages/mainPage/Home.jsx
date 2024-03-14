@@ -25,7 +25,7 @@ const { resultSummary } = Jeju_Oreum_Desc;
 const nowHour = new Date().getHours().toString().padStart(2, '0');
 console.log('nowHour', nowHour); //04
 
-console.log('weather', weather);
+// console.log('weather', weather);
 
 const Home = () => {
 	// const navigate = useNavigate();
@@ -175,7 +175,7 @@ const Home = () => {
 						// const kstTime = utcDate.toISOString().replace('T', ' ').substring(0, 19);
 						// console.log(kstTime); //2024-02-29 03:00:00
 						weather.forEach((el) => {
-							console.log('el', el);
+							// console.log('el', el);
 							// UTC 시간 문자열
 							const utcTime = el.dt_txt;
 
@@ -191,11 +191,11 @@ const Home = () => {
 
 							// weather의 시간
 							const hour = kstTime.substring(11, 13);
-							console.log('hour', hour);
+							// console.log('hour', hour);
 
 							if (nowHour == hour) {
 								let weatherStatus = el.weather[0].main; // Rain, Cloouds , ..
-								console.log('weatherStatus', weatherStatus);
+								// console.log('weatherStatus', weatherStatus);
 
 								let markerImgSrc;
 
@@ -233,7 +233,6 @@ const Home = () => {
 					});
 
 					setTimeout(function () {
-						console.log('Hello, World!');
 						setShowLanding(false);
 					}, 900);
 				},

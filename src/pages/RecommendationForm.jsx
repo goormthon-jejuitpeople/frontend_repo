@@ -7,6 +7,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { summarizeReview } from '@api/kogpt_api';
 import Loading from './Loading';
+import OpenAI from 'openai';
+import Juju_Oreum_Desc from '../test/Juju_Oreum_Desc.json';
+
+const key = process.env.REACT_APP_OPENAI_API_KEY;
+const openai = new OpenAI({ apiKey: `${key}`, dangerouslyAllowBrowser: true });
 
 function objectToQueryString(obj) {
 	const queryString = Object.entries(obj)
@@ -14,6 +19,7 @@ function objectToQueryString(obj) {
 		.join('&');
 	return queryString;
 }
+
 const RecommendationForm = () => {
 	const navigate = useNavigate();
 	const [selectedLocation, setSelectedLocation] = useState('');
@@ -23,6 +29,9 @@ const RecommendationForm = () => {
 
 	const [isLoading, setIsLoading] = useState(false);
 	const inputRef = useRef(null);
+
+	const [oreumNameList, setOreumNameList] = useState([]);
+
 	const handleClickLocation = (location) => {
 		setSelectedLocation(location);
 	};
@@ -32,19 +41,36 @@ const RecommendationForm = () => {
 	const handleClickWeather = (weather) => {
 		setSelectedWeather(weather);
 	};
+	const { resultSummary } = Juju_Oreum_Desc;
 
-	const mockData = {
-		oleumKname: '알오름',
-		oleumEname: 'al',
-		oleumAddr: '서귀포시 성산읍 시흥리',
-		oleumAltitu: 51,
-		x: '126.885873550364',
-		y: '33.4803782361653',
-		explan: '비고 51m의 원추형 화구를 지닌 화산체이다.',
-		imgPath: 'https://gis.jeju.go.kr/images/oleum/al.png',
-		reason:
-			'알오름은 도전적인 모험을 즐기는 분에게 안성맞춤입니다. 비교적 쉬운 등반 경로와 짧은 소요 시간에도 불구하고, 정상에서 바라보는 제주도의 파노라마는 압도적입니다. 계절에 관계없이 다채로운 자연 경관을 선사하며, 근처에 다양한 액티비티와 맛집이 있어 여행의 즐거움을 더합니다.',
-	};
+	useEffect(() => {
+		const name = resultSummary.map((el) => el.oleumKname);
+		setOreumNameList(name);
+	}, []);
+
+	// console.log('oreumNameList', oreumNameList);
+
+	async function main(totalString) {
+		const completion = await openai.chat.completions.create({
+			messages: [
+				{
+					role: 'system',
+					content: `너는 JSON 형태로 출력하는데 굉장히 잘해. 너는 존댓말을 사용하지만, 20대 여성의 말투야. user의 성향을 듣고 제주도 오름을 딱 1가지를 추천해줘!
+							오름은 제주도에 있는 높지 않은 산들을 말해. ${oreumNameList} 이 제주도 오름 중에서 다음에 말할 조건들에 부합하는 오름 딱 하나를 추천해야해.
+							반드시 매번 새롭게 내 질문에 대한 대답을 해줘야해! 성향은 다음과 같아. ${totalString}
+							오름 하나를 골랐다면 그 오름을 추천한 이유를 성향을 근거로 이야기해줘. 현재 계절, 사람들의 감상평, 내 인생 모토, 오름 근처에서 할 만한 것 등을 고려해서 추천해줘.
+							구체적인 예시로는, 당신은 활발한 운동을 좋아하기 때문에 높은 등반을 할 수 있는 성산일출봉을 추천드립니다 처럼 해주면 돼.
+							추천 이유는 300자로 제한할게. 결과는 {name: "오름이름", reason: "추천이유"} 형식으로 제공해줘. 꼭 제주도 오름이여야 해`,
+				},
+				// { role: 'user', content: `제주도 오름 중에 1곳만 추천해줘.  추천하는 이유도 같이 설명해줘.` },
+			],
+			model: 'gpt-3.5-turbo-0125',
+			response_format: { type: 'json_object' },
+		});
+		// console.log(completion.choices[0].message.content);
+		return completion.choices[0].message.content;
+	}
+
 	const handleSubmit = async () => {
 		let totalString = ''; // Corrected variable name
 		const lifeMoto = `나의 여행모토는 "${inputRef.current.value}"야`;
@@ -60,15 +86,16 @@ const RecommendationForm = () => {
 		// 오름 하나를 골랐다면 그 오름을 추천한 이유를 성향을 근거로 들어주라. 현재 계절, 사람들의 감상평, 내 인생 모토, 오름 근처에서 할 만한 것 등을 고려해서 추천해줘.
 		// 구체적인 예시로는, 당신은 활발한 운동을 좋아하기 때문에 높은 등반을 할 수 있는 성산일출봉을 추천드립니다 처럼 해주면 돼
 		// 추천 이유는 300자로 제한할게. 결과는 {name: "오름이름", reason: "추천이유"} 형식으로 제공해줘.  "`;
-		const prompt = `1+1= 정답을 알려줘`;
 		setIsLoading(true);
-		console.log('prompt', prompt);
 		// Assuming summarizeReview is a function that takes the prompt and does something useful with it
-		const response = await summarizeReview(prompt, 0);
+		// const response = await summarizeReview(prompt, 0);
+		const response = await main(totalString, 0);
+
 		console.log('response', response);
 		//response가 있을 때
 		setIsLoading(false);
-		navigate(`/recommendation?${objectToQueryString(mockData)}`);
+		// navigate(`/recommendation?${objectToQueryString(response)}`);
+		navigate(`/recommendation?${response}`);
 	};
 
 	useEffect(() => {

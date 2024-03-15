@@ -6,7 +6,7 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 		top_p: 0,
 	};
 
-	const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+	const PROXY = window.location.hostname === 'localhost' ? '' : '/v1';
 	const URL = `${PROXY}/v1/inference/kogpt/generation`;
 
 	try {

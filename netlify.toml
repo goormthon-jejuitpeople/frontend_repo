@@ -3,12 +3,13 @@ publish = "build"
 command = "npm run build"
 
 [[redirects]]
-from = "/api/*"
+from = "/api/kakao/*"
 to = "https://api.kakaobrain.com/:splat"
 status = 200
 force = true
 
-from = "/api/*"
-to = "https://api.openweathermap.org"
+[[redirects]]
+from = "/api/weather/*"
+to = "https://api.openweathermap.org/:splat"
 status = 200
 force = true

@@ -10,8 +10,8 @@ import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
 
 const DetailOreum = () => {
-	const { detailId } = useParams();
-	console.log('page _id, detailId');
+	// const { detailId } = useParams();
+	// console.log('page _id, detailId');
 	const [searchParams] = useSearchParams();
 	const queryList = [...searchParams];
 	const oreumData = Object.fromEntries(queryList);

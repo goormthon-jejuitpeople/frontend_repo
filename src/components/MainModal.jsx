@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const MainModal = ({ currentLocation }) => {
 	const { region_1depth_name, region_2depth_name, region_3depth_name } = currentLocation;
-	console.log(region_1depth_name + region_2depth_name);
+	// console.log(region_1depth_name + region_2depth_name);
 
 	return (
 		<Modal>

@@ -91,7 +91,7 @@ const RecommendationForm = () => {
 		// const response = await summarizeReview(prompt, 0);
 		const response = await main(totalString, 0);
 
-		console.log('response', response);
+		// console.log('response', response);
 		//response가 있을 때
 		setIsLoading(false);
 		// navigate(`/recommendation?${objectToQueryString(response)}`);
@@ -102,7 +102,7 @@ const RecommendationForm = () => {
 		// 사용자 좌표 얻어오기 & Map생성
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
-				console.log('position', position);
+				// console.log('position', position);
 				const lat = position.coords.latitude;
 				const lng = position.coords.longitude;
 				setGeolocation({ lat, lng });

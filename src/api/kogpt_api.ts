@@ -13,8 +13,7 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 		const response = await fetch(URL, {
 			method: 'POST',
 			headers: {
-				// Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,
-				Authorization: `KakaoAK eea100c490ea4dff5f9edeaf39d31a29`,
+				Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY}`,
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(requestBody),

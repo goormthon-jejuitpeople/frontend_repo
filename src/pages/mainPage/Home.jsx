@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Selector from '@components/TimeDropdown';
 import MainModal from '@components/MainModal';
 import styled from 'styled-components';
-// import { useNavigate } from 'react-router-dom';
 import Jeju_Oreum_Desc from '../../test/Juju_Oreum_Desc.json';
 import weather from '../../test/weather.json';
 import SunnyImg from '../../assets/sunny.png';
@@ -12,6 +11,7 @@ import CloudImg from '../../assets/cloud.png';
 
 import { Link } from 'react-router-dom';
 import Landing from '@pages/Landing';
+import { getWeather } from '@api/accue_weather';
 
 function objectToQueryString(obj) {
 	const queryString = Object.entries(obj)
@@ -22,14 +22,7 @@ function objectToQueryString(obj) {
 
 const { resultSummary } = Jeju_Oreum_Desc;
 
-const nowHour = new Date().getHours().toString().padStart(2, '0');
-console.log('nowHour', nowHour); //04
-
-// console.log('weather', weather);
-
 const Home = () => {
-	// const navigate = useNavigate();
-
 	const [isOpen, setIsOpen] = useState(false);
 	const [oruemData, setOreumData] = useState({});
 	const [currentLatLng, setCurrentLatLng] = useState({ lat: '', lng: '' });
@@ -42,7 +35,6 @@ const Home = () => {
 
 	useEffect(() => {
 		// 사용자 좌표 얻어오기 & Map생성
-
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
@@ -109,15 +101,6 @@ const Home = () => {
 						styles: [
 							{
 								// calculator 각 사이 값 마다 적용될 스타일을 지정한다
-								// width: '30px',
-								// height: '30px',
-								// background: '#FF7C43',
-								// borderRadius: '15px',
-								// color: '#000',
-								// textAlign: 'center',
-								// fontWeight: 'bold',
-								// lineHeight: '31px',
-
 								width: '0',
 								height: '0',
 								borderBottom: '10px solid #FF7C43',
@@ -153,83 +136,41 @@ const Home = () => {
 					});
 
 					resultSummary.forEach((oruem) => {
-						// console.log(oruem);
-						// console.log('oruem', oruem.x);
+						const fetchData = async () => {
+							// 오름의 좌표별 날씨 조회
+							const weatherStatus = await getWeather(oruem.y, oruem.x);
 
-						// oruem.y, oruem.x 위도, 경도 params로 보내 날씨 api 요청
+							let markerImgSrc;
 
-						// 응답으로 시간별 날씨 정보를 받음 --> 일단 목데이터 weather.json
-						// "dt_txt": "2024-02-28 18:00:00" <-- UTC
-						// weather를 돌면서 내 현재 시간과 UTC같은 객체 정보만 불러온다.
-
-						// UTC 시간 문자열
-						// const utcTime = '2024-02-28 18:00:00';
-
-						// Date 객체 생성
-						// const utcDate = new Date(utcTime + 'Z'); // 'Z'를 추가하여 UTC로 파싱하도록 함
-
-						// 한국 시간으로 변환 (UTC+9)
-						// utcDate.setHours(utcDate.getHours() + 9);
-
-						// 결과 출력
-						// const kstTime = utcDate.toISOString().replace('T', ' ').substring(0, 19);
-						// console.log(kstTime); //2024-02-29 03:00:00
-						weather.forEach((el) => {
-							// console.log('el', el);
-							// UTC 시간 문자열
-							const utcTime = el.dt_txt;
-
-							// Date 객체 생성
-							const utcDate = new Date(utcTime + 'Z'); // 'Z'를 추가하여 UTC로 파싱하도록 함
-
-							// 한국 시간으로 변환 (UTC+9)
-							utcDate.setHours(utcDate.getHours() + 9);
-
-							// 결과 출력
-							const kstTime = utcDate.toISOString().replace('T', ' ').substring(0, 19);
-							// console.log(kstTime); //2024-02-29 03:00:00
-
-							// weather의 시간
-							const hour = kstTime.substring(11, 13);
-							// console.log('hour', hour);
-
-							if (nowHour == hour) {
-								let weatherStatus = el.weather[0].main; // Rain, Cloouds , ..
-								// console.log('weatherStatus', weatherStatus);
-
-								let markerImgSrc;
-
-								// Set the image source based on the weather status
-								if (weatherStatus === 'Rain') {
-									markerImgSrc = RainImg;
-								} else if (weatherStatus === 'Clouds') {
-									markerImgSrc = CloudImg;
-								} else {
-									markerImgSrc = SunnyImg;
-								}
-
-								var marker = new kakao.maps.Marker({
-									position: new kakao.maps.LatLng(oruem.y, oruem.x),
-									image: new kakao.maps.MarkerImage(markerImgSrc, new kakao.maps.Size(40, 56), {
-										offset: new kakao.maps.Point(27, 69),
-									}),
-								});
-
-								// 마커에 클릭이벤트를 등록합니다
-								kakao.maps.event.addListener(marker, 'click', function () {
-									// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-									// infowindow.open(map, marker);
-									// modalOpen();
-									setIsOpen(true);
-									setOreumData(oruem);
-								});
-
-								clusterer.addMarker(marker);
+							// 날씨별 마커 이미지 변경
+							if (weatherStatus === 'Rain') {
+								markerImgSrc = RainImg;
+							} else if (weatherStatus === 'Clouds') {
+								markerImgSrc = CloudImg;
+							} else {
+								markerImgSrc = SunnyImg;
 							}
-						});
 
-						// 결과값으로 받은 위치를 마커로 표시합니다
-						// displayMarker(oruem);
+							var marker = new kakao.maps.Marker({
+								position: new kakao.maps.LatLng(oruem.y, oruem.x),
+								image: new kakao.maps.MarkerImage(markerImgSrc, new kakao.maps.Size(40, 56), {
+									offset: new kakao.maps.Point(27, 69),
+								}),
+							});
+
+							// // 마커에 클릭이벤트를 등록
+							kakao.maps.event.addListener(marker, 'click', function () {
+								// 마커를 클릭하면 장소명이 인포윈도우에 표출
+								// infowindow.open(map, marker);
+								// modalOpen();
+								setIsOpen(true);
+								setOreumData(oruem);
+							});
+
+							clusterer.addMarker(marker);
+						};
+
+						fetchData();
 					});
 
 					setTimeout(function () {

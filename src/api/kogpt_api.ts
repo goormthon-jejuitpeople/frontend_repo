@@ -7,7 +7,7 @@ export async function summarizeReview(reviewText: string, creativity: number) {
 	};
 
 	const PROXY = window.location.hostname === 'localhost' ? '' : '/v1';
-	const URL = `${PROXY}/v1/inference/kogpt/generation`;
+	const URL = `${PROXY}/inference/kogpt/generation`;
 
 	try {
 		const response = await fetch(URL, {

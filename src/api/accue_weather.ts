@@ -4,7 +4,7 @@ export async function getWeather(lat: string, lon: string) {
 	const key = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 	const PROXY = window.location.hostname === 'localhost' ? '' : '/data';
-	const URL = `${PROXY}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
+	const URL = `${PROXY}/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
 
 	try {
 		const response = await axios.get(URL);

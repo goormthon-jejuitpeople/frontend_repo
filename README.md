@@ -52,7 +52,7 @@ https://master--jejuitpeople.netlify.app/
 <br/>
 
 ## 4. 개발 환경
-![Alt text](<서비스 소개서12.png>)
+![서비스 소개서12](https://github.com/khv2644511/Algorithm/assets/38063033/83dd6358-3a8c-408e-be08-edd301471913)
 
 
 <br/>
@@ -60,10 +60,10 @@ https://master--jejuitpeople.netlify.app/
 <br/>
 
 ## 5. 팀 협업 방식
-- 🔗노션 링크 : https://www.notion.so/9-7be0edcf3b334cab9c1a289d5722ecf1?pvs=4
-- 🔗지라 링크 : https://chori0.atlassian.net/jira/software/projects/JEJ/boards/3
-- 🔗피그마 링크 : https://www.figma.com/file/D2M82DS9fr9UI2PRDEJvJ6/%EC%A0%9C%EC%A3%BC%EC%9E%87%EC%82%AC?type=design&node-id=15761%3A2544&mode=design&t=9QzZ2HM1E3esohNI-1
-- 🔗피그잼 링크 : https://www.figma.com/file/HyjMZuEdaQ9ppOWN6q9U4I/%ED%94%BC%EA%B7%B8%EC%9E%BC?type=whiteboard&t=qST83ywMbh4GJ8JZ-0
+- [🔗Notion 링크](https://www.notion.so/9-7be0edcf3b334cab9c1a289d5722ecf1?pvs=4) 
+- [🔗JIRA 링크](https://chori0.atlassian.net/jira/software/projects/JEJ/boards/3)
+- [🔗Figma 링크](%EC%A0%9C%EC%A3%BC%EC%9E%87%EC%82%AC?type=design&node-id=15761%3A2544&mode=design&t=9QzZ2HM1E3esohNI-1)
+- [🔗Fimgam 링크](https://www.figma.com/file/HyjMZuEdaQ9ppOWN6q9U4I/%ED%94%BC%EA%B7%B8%EC%9E%BC?type=whiteboard&t=qST83ywMbh4GJ8JZ-0)
 
 <br/>
 <br/>

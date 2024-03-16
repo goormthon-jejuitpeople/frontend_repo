@@ -32,9 +32,9 @@
 
 ## 프로젝트 구성화면
 
-| 날씨 정보 조회 | 오름 상세정보 확인| 생성형 AI 맞춤 오름 추천| AI 기반 리뷰 요약|
+| 날씨 정보 조회 | 생성형 AI 맞춤 오름 추천 |AI 기반 리뷰 요약|오름 상세정보 확인 |
 |-----------|----------------------------------- | --------------------- | ------------------------------- |
-|<img width="349" alt="image" src="https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/73c8fe06-3dc1-4151-af4e-6142b5c91f98">|![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)|![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)| ![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)|
+|<img width="349" alt="스크린샷 2024-03-16 오후 2 50 14" src="https://github.com/khv2644511/Algorithm/assets/38063033/8a3c5675-5b1a-42e8-b794-5a3e9d109ee5">|![추천추천](https://github.com/khv2644511/Algorithm/assets/38063033/04905130-5284-4224-b081-55a54e2b8bc8)|![리븅약](https://github.com/khv2644511/Algorithm/assets/38063033/9fcb6f40-c509-4809-a443-74bac32a0de1)| ![오름상세](https://github.com/goormthon-jejuitpeople/frontend_repo/assets/38063033/f36bd93e-db37-45e2-b742-97e90a8e0f0e)|
 
 <br/>
 <br/>
@@ -44,8 +44,8 @@
 ## 2. 팀원 소개
 | 고동희 | 김민철 | 김혜빈 | 이채영| 조승효 |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> | <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> | <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> | <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> | <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> |
-| [🔗고동희](https://github.com/khv2644511)| [🔗김민철](https://github.com/khv2644511)| [🔗김혜빈](https://github.com/khv2644511)| [🔗khv2644511](https://github.com/khv2644511)| [🔗khv2644511](https://github.com/khv2644511) |
+|<img src="https://github.com/khv2644511/Algorithm/assets/38063033/48e7a061-40ba-49ce-9227-52339fab73f4" width="100" height="100"/> |<img src="https://github.com/khv2644511/Algorithm/assets/38063033/22111d06-57bb-490e-9c45-43025127ab8a" width="100" height="100"/> | <img src="https://user-images.githubusercontent.com/38063033/210303041-23d865e2-63f2-4ce7-a924-a212d28ec007.jpeg" width="100" height="100"/> |<img src="https://github.com/khv2644511/Algorithm/assets/38063033/e16dab5c-5dd1-4588-a2c1-650ec77e8d7f" width="100" height="100"/> |<img src="https://github.com/khv2644511/Algorithm/assets/38063033/46f728cb-27b7-48a0-8092-de1963aa7a5e" width="100" height="100"/> |
+| [🔗고동희 Github](https://github.com/kodonghee)| [🔗김민철 Github](https://github.com/choriBae)| [🔗김혜빈 Github](https://github.com/khv2644511)| [🔗이채영 Github](https://github.com/lo0obs)| [🔗조승효 Github](https://github.com/Joseunghyo7742) |
 | 백엔드 | 기획 | 프론트 | 디자이너  | 프론트|
 
 <br/>

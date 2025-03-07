@@ -85,7 +85,7 @@ const Location = styled.div`
 const Button = styled.button`
 	box-sizing: border-box;
 	display: flex;
-	width: 328px;
+	width: 100%;
 	padding: 14px 24px;
 	justify-content: center;
 	align-items: center;

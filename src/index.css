@@ -4,6 +4,12 @@
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -96,7 +102,7 @@ body {
 
 #root,
 .App {
-	width: 393px;
+	max-width: 393px;
 	background-color: #ffff;
 	margin: auto;
 	min-height: 100%;

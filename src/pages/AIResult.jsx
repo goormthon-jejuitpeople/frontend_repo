@@ -18,12 +18,13 @@ const AIResult = () => {
 	const queryList = [...searchParams];
 	const { name, reason } = JSON.parse(queryList[0][0]);
 	const { resultSummary } = Juju_Oreum_Desc;
-	const [oreumData, setOreumData] = useState({});
+
+	const [oreumData, setOreumData] = useState(null);
 
 	useEffect(() => {
 		const foundOreum = resultSummary.find((el) => el.oleumKname === name);
-		setOreumData(foundOreum);
-	}, []);
+		setOreumData(foundOreum || null);
+	}, [name, reason, resultSummary]);
 
 	return (
 		<main className='w-full pb-12'>
@@ -42,7 +43,7 @@ const AIResult = () => {
 					<p className='text-[#2B2D36] text-sm font-medium leading-6'>{oreumData.oleumAddr}</p>
 				</div> */}
 				<h1 className='my-4 text-3xl font-extrabold'>{name}</h1>
-				<WeatherCard weather='sunny' detail='기온 7도 습도 13% ' recommendation={oreumData.reason} />
+				{reason && <WeatherCard weather='sunny' detail='기온 7도 습도 13%' recommendation={reason} />}
 				<h2 className='mb-4 text-lg font-extrabold text-#2B2D36'>장소 특징</h2>
 				<div className='flex justify-around'>
 					<img src={Image} />

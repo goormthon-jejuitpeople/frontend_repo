@@ -8,6 +8,7 @@ import Reivew from '@components/Reivew';
 import styled from 'styled-components';
 import Image from '../assets/Image.png';
 import Img2 from '../assets/Img2.png';
+import oreumBasic from '../assets/oreum_basic.webp';
 import { kMaxLength } from 'buffer';
 import Juju_Oreum_Desc from '../test/Juju_Oreum_Desc.json';
 import { useEffect, useState } from 'react';
@@ -31,7 +32,8 @@ const AIResult = () => {
 					<img src={logo} />
 				</div>
 				<div className='w-full h-48 overflow-hidden '>
-					<img className='w-full h-full' src={oreumData.imgPath} />
+					{/* problem: 렌더링 이후 오름데이터가 만들어져 베이직 이미지 -> 오름데이터 이미지가 보임 */}
+					{oreumData?.imgPath ? <img className='w-full h-full' src={oreumData.imgPath} /> : <img src={oreumBasic} />}
 				</div>
 			</header>
 			<section className='mx-6'>

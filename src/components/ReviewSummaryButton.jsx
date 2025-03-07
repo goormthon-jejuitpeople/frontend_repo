@@ -3,6 +3,8 @@ import { mockReviews } from '@mock/mockReviewText';
 import { summarizeReview } from '@api/kogpt_api';
 import styled from 'styled-components';
 import { BeatLoader } from 'react-spinners';
+import OpenAI from 'openai';
+
 const override = {
 	display: 'block',
 	margin: '0 auto',
@@ -10,18 +12,30 @@ const override = {
 	height: '40px',
 };
 
+const key = process.env.REACT_APP_OPENAI_API_KEY;
+const openai = new OpenAI({ apiKey: `${key}`, dangerouslyAllowBrowser: true });
+
 const ReviewSummaryButton = () => {
 	const [summary, setSummary] = useState('');
 	const [isLoading, isSetLoading] = useState(null);
+
 	const handleOnClick = async () => {
 		isSetLoading(true);
 		const reviewText = mockReviews.map((review) => review.text).join('\n\n');
-		const plusPrompt = `다음 리뷰들에 대해서 요약해줘. 요약할 때, 리뷰를 전달하는 듯한 말투로하고 문장은 5문장을 넘기지 말아줘
-		산에서 본 풍경들, 거기서 했던 활동, 어떤 점이 좋았는지, 누구랑가서 좋았는지, 힘들었다면 왜힘들었는지, 주변에 뭐가있는지
-		등 디테일한 것을 넣어주면 좋을 것 같아. 말투는 친근하면서 전문적이게 반말은하지마   ${reviewText}`;
-		const response = await summarizeReview(plusPrompt, 0.5);
+		const completion = await openai.chat.completions.create({
+			messages: [
+				{
+					role: 'system',
+					content: `다음 리뷰들에 대해서 요약해줘. 요약할 때, 리뷰를 전달하는 듯한 말투로하고 문장은 3문장을 넘기지 말아줘
+							산에서 본 풍경들, 거기서 했던 활동, 어떤 점이 좋았는지, 누구랑가서 좋았는지, 힘들었다면 왜힘들었는지, 주변에 뭐가있는지
+							등 디테일한 것을 넣어주면 좋을 것 같아. 말투는 친근하면서 전문적이게 반말은하지마 ${reviewText}`,
+				},
+			],
+			model: 'gpt-4o',
+		});
+		console.log(completion.choices[0].message.content);
 		isSetLoading(false);
-		setSummary(response);
+		setSummary(completion.choices[0].message.content);
 	};
 
 	return (
